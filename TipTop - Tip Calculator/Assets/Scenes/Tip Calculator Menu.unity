@@ -2278,10 +2278,10 @@ MonoBehaviour:
   billAmountText: {fileID: 1262519}
   tipPercentageText: {fileID: 1021975906}
   splitText: {fileID: 798539455}
-  totalBillAmountText: {fileID: 0}
-  totalTipAmountText: {fileID: 0}
-  totalBillPerPersonText: {fileID: 0}
-  tipPerPersonText: {fileID: 0}
+  totalBillAmountText: {fileID: 235279080}
+  totalTipAmountText: {fileID: 2121226863}
+  totalBillPerPersonText: {fileID: 2088314605}
+  tipPerPersonText: {fileID: 1960873519}
   tipPercentageSlider: {fileID: 385276155}
   splitSlider: {fileID: 35182776}
 --- !u!1 &574573375

@@ -41,11 +41,7 @@ public class TipCalculatorUI : MonoBehaviour
     /// <param name="amount">Bill amount ($).</param>
     public void SetBillAmountText(float amount)
     {
-        string fullBillAmount = $"{amount.ToString("0.00")}";
-        string dollarAmount = fullBillAmount.Substring(0, fullBillAmount.Length - 3);
-        string centsAmount = fullBillAmount.GetLast(3);
-
-        billAmountText.text = $"<size=200>${dollarAmount}</size><size=100>{centsAmount}</size>";
+        billAmountText.text = FormatText(amount, 200);
     }
 
     /// <summary>
@@ -65,5 +61,56 @@ public class TipCalculatorUI : MonoBehaviour
     {
         string peopleString = split == 1 ? "Person" : "People";
         splitText.text = $"{split} {peopleString}";
+    }
+
+    /// <summary>
+    /// Set text for Total Bill Amount. [Range: $0.00 - $9999.99]
+    /// </summary>
+    /// <param name="amount">Total Bill amount ($).</param>
+    public void SetTotalBillAmountText(float amount)
+    {
+        totalBillAmountText.text = FormatText(amount, 128);
+    }
+
+    /// <summary>
+    /// Set text for Total Tip Amount. [Range: $0.00 - $9999.99]
+    /// </summary>
+    /// <param name="amount">Total Tip amount ($).</param>
+    public void SetTotalTipAmountText(float amount)
+    {
+        totalTipAmountText.text = FormatText(amount, 128);
+    }
+
+    /// <summary>
+    /// Set text for Total Bill Per Person. [Range: $0.00 - $9999.99]
+    /// </summary>
+    /// <param name="amount">Total Bill Per Person ($).</param>
+    public void SetTotalBillPerPersonText(float amount)
+    {
+        totalBillPerPersonText.text = FormatText(amount, 128);
+    }
+
+    /// <summary>
+    /// Set text for Tip Per Person. [Range: $0.00 - $9999.99]
+    /// </summary>
+    /// <param name="amount">Tip Per Person ($).</param>
+    public void SetTipPerPersonText(float amount)
+    {
+        tipPerPersonText.text = FormatText(amount, 128);
+    }
+
+    /// <summary>
+    /// Format currency ($) text.
+    /// </summary>
+    /// <param name="amount"></param>
+    /// <param name="mainFontSize">Main font size.</param>
+    /// <returns></returns>
+    private string FormatText(float amount, int mainFontSize)
+    {
+        string fullAmount = $"{amount.ToString("0.00")}";
+        string dollarAmount = fullAmount.Substring(0, fullAmount.Length - 3);
+        string centsAmount = fullAmount.GetLast(3);
+
+        return $"<size={mainFontSize}>${dollarAmount}</size><size={mainFontSize / 2}>{centsAmount}</size>";
     }
 }

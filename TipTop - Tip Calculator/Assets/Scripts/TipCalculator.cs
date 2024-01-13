@@ -97,6 +97,7 @@ public class TipCalculator : MonoBehaviour
     {
         float result = billAmount * (1f + ((float)tipPercentage / 100f));
         totalBillAmount = result;
+        UI.SetTotalBillAmountText(totalBillAmount);
     }
 
     /// <summary>
@@ -106,6 +107,7 @@ public class TipCalculator : MonoBehaviour
     {
         float result = billAmount * ((float)tipPercentage / 100f);
         totalTipAmount = result;
+        UI.SetTotalTipAmountText(totalTipAmount);
     }
 
     /// <summary>
@@ -115,6 +117,7 @@ public class TipCalculator : MonoBehaviour
     {
         float result = totalBillAmount / split;
         totalBillPerPerson = result;
+        UI.SetTotalBillPerPersonText(totalBillPerPerson);
     }
 
     /// <summary>
@@ -124,6 +127,7 @@ public class TipCalculator : MonoBehaviour
     {
         float result = totalTipAmount / split;
         tipPerPerson = result;
+        UI.SetTipPerPersonText(tipPerPerson);
     }
     #endregion
 }
