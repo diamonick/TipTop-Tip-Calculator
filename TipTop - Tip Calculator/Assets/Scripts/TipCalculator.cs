@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TipCalculator : MonoBehaviour
 {
@@ -12,8 +13,6 @@ public class TipCalculator : MonoBehaviour
     [SerializeField] private float tipPercentage;
     [SerializeField] private int split;
 
-    [Header("UI"), Space(8)]
-    public TipCalculatorUI userInterface;
     public float BillAmount { get { return billAmount; } }
     public float TipPercentage { get { return tipPercentage; } }
     public float Split { get { return split; } }
@@ -27,6 +26,13 @@ public class TipCalculator : MonoBehaviour
     public float TotalBillPerPerson { get { return totalBillPerPerson; } }
     public float TipPerPerson { get { return tipPerPerson; } }
 
+    [Header("UI"), Space(8)]
+    public TipCalculatorUI UI;
+    [SerializeField] private Slider tipPercentageSlider;
+    [SerializeField] private Slider splitSlider;
+    [SerializeField] private Color colorPref;
+    public Color ColorPreference { get { return colorPref; } }
+
     private void Awake()
     {
         if (Instance == null)
@@ -39,6 +45,23 @@ public class TipCalculator : MonoBehaviour
             Destroy(gameObject);
             Debug.LogWarning($"WARNING: There can only be one TipCalculator instance.");
         }
+
+        // Allow app to accept multiple touch inputs from the user.
+        Input.multiTouchEnabled = true;
+    }
+
+    private void Start()
+    {
+        UI.SetBillAmountText(billAmount);
+        UI.SetTipPercentageText(tipPercentage);
+        tipPercentageSlider.value = tipPercentage;
+        UI.SetSplitText(split);
+        splitSlider.value = split;
+    }
+
+    private void Update()
+    {
+        //PerformTipCalculations();
     }
 
     #region Tip Calculation Method(s)
@@ -48,6 +71,18 @@ public class TipCalculator : MonoBehaviour
         CalculateTotalTipAmount();
         CalculateTotalBillPerPerson();
         CalculateTipPerPerson();
+    }
+
+    public void SetTipPercentage()
+    {
+        tipPercentage = tipPercentageSlider.value;
+        UI.SetTipPercentageText(tipPercentage);
+    }
+
+    public void SetSplit()
+    {
+        split = (int)splitSlider.value;
+        UI.SetSplitText(split);
     }
 
     /// <summary>
