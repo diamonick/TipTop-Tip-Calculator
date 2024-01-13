@@ -10,26 +10,24 @@ public class TipCalculator : MonoBehaviour
 
     [Header("Tip Calculator")]
     [SerializeField] private float billAmount;
-    [SerializeField] private float tipPercentage;
+    [SerializeField] private int tipPercentage;
     [SerializeField] private int split;
 
     public float BillAmount { get { return billAmount; } }
     public float TipPercentage { get { return tipPercentage; } }
     public float Split { get { return split; } }
 
-    private float totalBillAmount;
-    private float totalTipAmount;
-    private float totalBillPerPerson;
-    private float tipPerPerson;
+    [SerializeField] private float totalBillAmount;
+    [SerializeField] private float totalTipAmount;
+    [SerializeField] private float totalBillPerPerson;
+    [SerializeField] private float tipPerPerson;
     public float TotalBillAmount { get { return totalBillAmount; } }
     public float TotalTipAmount { get { return totalTipAmount; } }
     public float TotalBillPerPerson { get { return totalBillPerPerson; } }
     public float TipPerPerson { get { return tipPerPerson; } }
 
-    [Header("UI"), Space(8)]
+    [Header("User Interface"), Space(8)]
     public TipCalculatorUI UI;
-    [SerializeField] private Slider tipPercentageSlider;
-    [SerializeField] private Slider splitSlider;
     [SerializeField] private Color colorPref;
     public Color ColorPreference { get { return colorPref; } }
 
@@ -54,17 +52,18 @@ public class TipCalculator : MonoBehaviour
     {
         UI.SetBillAmountText(billAmount);
         UI.SetTipPercentageText(tipPercentage);
-        tipPercentageSlider.value = tipPercentage;
         UI.SetSplitText(split);
-        splitSlider.value = split;
     }
 
     private void Update()
     {
-        //PerformTipCalculations();
+        PerformTipCalculations();
     }
 
     #region Tip Calculation Method(s)
+    /// <summary>
+    /// Perform all necessary tip calculations.
+    /// </summary>
     public void PerformTipCalculations()
     {
         CalculateTotalBillAmount();
@@ -73,15 +72,21 @@ public class TipCalculator : MonoBehaviour
         CalculateTipPerPerson();
     }
 
+    public void SetBillAmount(float amount)
+    {
+        billAmount = amount;
+        UI.SetBillAmountText(billAmount);
+    }
+
     public void SetTipPercentage()
     {
-        tipPercentage = tipPercentageSlider.value;
+        tipPercentage = (int)UI.tipPercentageSlider.value;
         UI.SetTipPercentageText(tipPercentage);
     }
 
     public void SetSplit()
     {
-        split = (int)splitSlider.value;
+        split = (int)UI.splitSlider.value;
         UI.SetSplitText(split);
     }
 
@@ -90,7 +95,7 @@ public class TipCalculator : MonoBehaviour
     /// </summary>
     public void CalculateTotalBillAmount()
     {
-        float result = billAmount * (1f + tipPercentage);
+        float result = billAmount * (1f + ((float)tipPercentage / 100f));
         totalBillAmount = result;
     }
 
@@ -99,7 +104,7 @@ public class TipCalculator : MonoBehaviour
     /// </summary>
     public void CalculateTotalTipAmount()
     {
-        float result = billAmount * tipPercentage;
+        float result = billAmount * ((float)tipPercentage / 100f);
         totalTipAmount = result;
     }
 

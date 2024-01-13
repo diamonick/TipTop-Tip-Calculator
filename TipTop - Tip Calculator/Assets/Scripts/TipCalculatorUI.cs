@@ -23,11 +23,22 @@ public class TipCalculatorUI : MonoBehaviour
     [SerializeField] private TMP_Text totalBillPerPersonText;
     [SerializeField] private TMP_Text tipPerPersonText;
 
+    [Header("Sliders"), Space(8)]
+    public Slider tipPercentageSlider;
+    public Slider splitSlider;
+
     private void Start()
     {
         TC = TipCalculator.Instance;
+
+        tipPercentageSlider.value = TC.TipPercentage;
+        splitSlider.value = TC.Split;
     }
 
+    /// <summary>
+    /// Set text for Bill Amount. [Range: $0.00 - $9999.99]
+    /// </summary>
+    /// <param name="amount">Bill amount ($).</param>
     public void SetBillAmountText(float amount)
     {
         string fullBillAmount = $"{amount.ToString("0.00")}";
@@ -37,12 +48,19 @@ public class TipCalculatorUI : MonoBehaviour
         billAmountText.text = $"<size=200>${dollarAmount}</size><size=100>{centsAmount}</size>";
     }
 
+    /// <summary>
+    /// Set text for Tip Percentage. [Range: 0% - 100%]
+    /// </summary>
+    /// <param name="percentage">Tip percentage (%).</param>
     public void SetTipPercentageText(float percentage)
     {
-        float percent = percentage * 100f;
-        tipPercentageText.text = $"{percent.ToString("0")}%";
+        tipPercentageText.text = $"{percentage.ToString("0")}%";
     }
 
+    /// <summary>
+    /// Set text for Split. [Range: 1 Person - 10 People]
+    /// </summary>
+    /// <param name="split">Split (No. of People).</param>
     public void SetSplitText(int split)
     {
         string peopleString = split == 1 ? "Person" : "People";
