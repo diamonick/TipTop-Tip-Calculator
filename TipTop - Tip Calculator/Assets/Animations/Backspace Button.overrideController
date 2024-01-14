@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Backspace Button
+  m_Controller: {fileID: 9100000, guid: 8b30899a1d2d47841b9f1719fb95c0bb, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 28808d2e0d539434885efeab21f4330d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e177a2d32e1899249a230d514b396c08, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 68ed02467a07b7e4281541431d9dfb3d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 084cc1118a0cd5f4580278ec387d5359, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b7d94bfbd0dace848ab4fa3a6488c040, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 49828d3d848c0ed4787cab3c287ce4db, type: 2}

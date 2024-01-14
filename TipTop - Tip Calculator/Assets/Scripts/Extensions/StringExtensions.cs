@@ -12,5 +12,10 @@ namespace StringExtensionMethods
                 return source;
             return source.Substring(source.Length - numberOfChars);
         }
+
+        public static bool IsEmpty(this string source)
+        {
+            return source.Length == 0;
+        }
     }
 }

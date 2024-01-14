@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -24}
+  m_AnchoredPosition: {x: 0, y: -32}
   m_SizeDelta: {x: -88, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1262519
@@ -274,7 +274,7 @@ GameObject:
   - component: {fileID: 18895659}
   - component: {fileID: 18895658}
   m_Layer: 5
-  m_Name: Numpad 1 (9)
+  m_Name: Clear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -318,7 +318,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 18895661}
-          m_TargetAssemblyTypeName: NumberPadButton, Assembly-CSharp
+          m_TargetAssemblyTypeName: PadButton, Assembly-CSharp
           m_MethodName: OnButtonPressed
           m_Mode: 1
           m_Arguments:
@@ -334,7 +334,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 18895661}
-          m_TargetAssemblyTypeName: NumberPadButton, Assembly-CSharp
+          m_TargetAssemblyTypeName: PadButton, Assembly-CSharp
           m_MethodName: OnButtonReleased
           m_Mode: 1
           m_Arguments:
@@ -389,12 +389,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 18895656}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a927dc9edb541141860583107e64523, type: 3}
+  m_Script: {fileID: 11500000, guid: 23e370aab907bea4cad3753e61dff33a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   numberPad: {fileID: 977997664}
-  numberPadText: {fileID: 1562357724}
-  number: 1
   animator: {fileID: 18895660}
 --- !u!114 &18895662
 MonoBehaviour:
@@ -440,9 +438,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 18895661}
-        m_TargetAssemblyTypeName: NumberPadButton, Assembly-CSharp
-        m_MethodName: InputNumber
+      - m_Target: {fileID: 977997664}
+        m_TargetAssemblyTypeName: NumberPad, Assembly-CSharp
+        m_MethodName: ClearBillAmount
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1331,7 +1329,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 19d82d53cdb0c50418324d18c9e27fa0, type: 2}
   m_sharedMaterial: {fileID: 230447621955668390, guid: 19d82d53cdb0c50418324d18c9e27fa0, type: 2}
@@ -1425,7 +1423,7 @@ GameObject:
   - component: {fileID: 473285254}
   - component: {fileID: 473285253}
   m_Layer: 5
-  m_Name: Numpad 1 (10)
+  m_Name: Numpad 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1544,9 +1542,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberPad: {fileID: 977997664}
+  animator: {fileID: 473285255}
   numberPadText: {fileID: 1977614429}
   number: 0
-  animator: {fileID: 473285255}
 --- !u!114 &473285257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1751,7 +1749,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: -36}
+  m_AnchoredPosition: {x: 0, y: -100}
   m_SizeDelta: {x: 1012, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &511656287
@@ -1771,7 +1769,7 @@ GameObject:
   - component: {fileID: 511656290}
   - component: {fileID: 511656289}
   m_Layer: 5
-  m_Name: Numpad 1 (7)
+  m_Name: Numpad 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1890,9 +1888,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberPad: {fileID: 977997664}
+  animator: {fileID: 511656291}
   numberPadText: {fileID: 1210145060}
   number: 8
-  animator: {fileID: 511656291}
 --- !u!114 &511656293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2214,9 +2212,9 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 2778, y: 1284}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.5
+  m_ReferenceResolution: {x: 1284, y: 2778}
+  m_ScreenMatchMode: 1
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -2284,6 +2282,7 @@ MonoBehaviour:
   tipPerPersonText: {fileID: 1960873519}
   tipPercentageSlider: {fileID: 385276155}
   splitSlider: {fileID: 35182776}
+  canvasScaler: {fileID: 565250571}
 --- !u!1 &574573375
 GameObject:
   m_ObjectHideFlags: 0
@@ -2319,7 +2318,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 200}
+  m_AnchoredPosition: {x: 0, y: 136}
   m_SizeDelta: {x: 1012, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &606196098
@@ -2443,7 +2442,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 19d82d53cdb0c50418324d18c9e27fa0, type: 2}
   m_sharedMaterial: {fileID: 230447621955668390, guid: 19d82d53cdb0c50418324d18c9e27fa0, type: 2}
@@ -2537,7 +2536,7 @@ GameObject:
   - component: {fileID: 706533780}
   - component: {fileID: 706533779}
   m_Layer: 5
-  m_Name: Numpad 1 (2)
+  m_Name: Numpad 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2656,9 +2655,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberPad: {fileID: 977997664}
+  animator: {fileID: 706533781}
   numberPadText: {fileID: 462912150}
   number: 3
-  animator: {fileID: 706533781}
 --- !u!114 &706533783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2789,8 +2788,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: -432}
-  m_SizeDelta: {x: 1012, y: 420}
+  m_AnchoredPosition: {x: 0, y: -480}
+  m_SizeDelta: {x: 1012, y: 360}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &754866603
 MonoBehaviour:
@@ -2887,7 +2886,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 6
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 19d82d53cdb0c50418324d18c9e27fa0, type: 2}
   m_sharedMaterial: {fileID: 230447621955668390, guid: 19d82d53cdb0c50418324d18c9e27fa0, type: 2}
@@ -2997,7 +2996,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.040899284, y: 0}
   m_AnchorMax: {x: 0.9678993, y: 1}
-  m_AnchoredPosition: {x: -3.7499695, y: 0}
+  m_AnchoredPosition: {x: -3.7500305, y: 0}
   m_SizeDelta: {x: 7.5000305, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &798539453
@@ -3361,7 +3360,7 @@ GameObject:
   - component: {fileID: 927552477}
   - component: {fileID: 927552476}
   m_Layer: 5
-  m_Name: Numpad 1 (3)
+  m_Name: Numpad 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3480,9 +3479,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberPad: {fileID: 977997664}
+  animator: {fileID: 927552478}
   numberPadText: {fileID: 1535142224}
   number: 4
-  animator: {fileID: 927552478}
 --- !u!114 &927552480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3594,7 +3593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &977667236
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3756,9 +3755,9 @@ RectTransform:
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -1280}
-  m_SizeDelta: {x: 912, y: 1047}
+  m_SizeDelta: {x: 912, y: 947}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &977997663
 MonoBehaviour:
@@ -3799,17 +3798,17 @@ MonoBehaviour:
   billAmountInput: 
   numpadButtons:
   - {fileID: 5364082453027554357}
+  - {fileID: 1265179010}
+  - {fileID: 706533782}
+  - {fileID: 927552479}
+  - {fileID: 1179676031}
+  - {fileID: 1205152130}
+  - {fileID: 983350407}
+  - {fileID: 511656292}
+  - {fileID: 1615917171}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 473285256}
+  - {fileID: 1613052883}
 --- !u!1 &983350402
 GameObject:
   m_ObjectHideFlags: 0
@@ -3827,7 +3826,7 @@ GameObject:
   - component: {fileID: 983350405}
   - component: {fileID: 983350404}
   m_Layer: 5
-  m_Name: Numpad 1 (6)
+  m_Name: Numpad 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3946,9 +3945,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberPad: {fileID: 977997664}
+  animator: {fileID: 983350406}
   numberPadText: {fileID: 2131431059}
   number: 7
-  animator: {fileID: 983350406}
 --- !u!114 &983350408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4365,7 +4364,7 @@ GameObject:
   - component: {fileID: 1179676029}
   - component: {fileID: 1179676028}
   m_Layer: 5
-  m_Name: Numpad 1 (4)
+  m_Name: Numpad 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4484,9 +4483,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberPad: {fileID: 977997664}
+  animator: {fileID: 1179676030}
   numberPadText: {fileID: 657405438}
   number: 5
-  animator: {fileID: 1179676030}
 --- !u!114 &1179676032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4598,7 +4597,7 @@ GameObject:
   - component: {fileID: 1205152128}
   - component: {fileID: 1205152127}
   m_Layer: 5
-  m_Name: Numpad 1 (5)
+  m_Name: Numpad 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4717,9 +4716,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberPad: {fileID: 977997664}
+  animator: {fileID: 1205152129}
   numberPadText: {fileID: 756512795}
   number: 6
-  animator: {fileID: 1205152129}
 --- !u!114 &1205152131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4871,7 +4870,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 8
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 19d82d53cdb0c50418324d18c9e27fa0, type: 2}
   m_sharedMaterial: {fileID: 230447621955668390, guid: 19d82d53cdb0c50418324d18c9e27fa0, type: 2}
@@ -5055,7 +5054,7 @@ GameObject:
   - component: {fileID: 1265179008}
   - component: {fileID: 1265179007}
   m_Layer: 5
-  m_Name: Numpad 1 (1)
+  m_Name: Numpad 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5174,9 +5173,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberPad: {fileID: 977997664}
+  animator: {fileID: 1265179009}
   numberPadText: {fileID: 1687813131}
   number: 2
-  animator: {fileID: 1265179009}
 --- !u!114 &1265179011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5328,7 +5327,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 9
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 19d82d53cdb0c50418324d18c9e27fa0, type: 2}
   m_sharedMaterial: {fileID: 230447621955668390, guid: 19d82d53cdb0c50418324d18c9e27fa0, type: 2}
@@ -5438,7 +5437,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.040899284, y: 0}
   m_AnchorMax: {x: 0.9678993, y: 1}
-  m_AnchoredPosition: {x: -3.7499695, y: 0}
+  m_AnchoredPosition: {x: -3.7500305, y: 0}
   m_SizeDelta: {x: 7.5000305, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1324692615
@@ -5510,10 +5509,10 @@ RectTransform:
   m_Father: {fileID: 1742754316}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 1159}
-  m_SizeDelta: {x: 0, y: 1536}
+  m_AnchoredPosition: {x: 0, y: 800}
+  m_SizeDelta: {x: 0, y: 2136}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1424145180
 GameObject:
@@ -5722,7 +5721,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 4
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 19d82d53cdb0c50418324d18c9e27fa0, type: 2}
   m_sharedMaterial: {fileID: 230447621955668390, guid: 19d82d53cdb0c50418324d18c9e27fa0, type: 2}
@@ -5856,7 +5855,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: C
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 19d82d53cdb0c50418324d18c9e27fa0, type: 2}
   m_sharedMaterial: {fileID: 230447621955668390, guid: 19d82d53cdb0c50418324d18c9e27fa0, type: 2}
@@ -5950,7 +5949,7 @@ GameObject:
   - component: {fileID: 1613052881}
   - component: {fileID: 1613052880}
   m_Layer: 5
-  m_Name: Numpad 1 (11)
+  m_Name: Backspace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5968,6 +5967,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 977667236}
+  - {fileID: 1757620565}
   m_Father: {fileID: 977997662}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5994,7 +5994,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1613052883}
-          m_TargetAssemblyTypeName: NumberPadButton, Assembly-CSharp
+          m_TargetAssemblyTypeName: PadButton, Assembly-CSharp
           m_MethodName: OnButtonPressed
           m_Mode: 1
           m_Arguments:
@@ -6010,7 +6010,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1613052883}
-          m_TargetAssemblyTypeName: NumberPadButton, Assembly-CSharp
+          m_TargetAssemblyTypeName: PadButton, Assembly-CSharp
           m_MethodName: OnButtonReleased
           m_Mode: 1
           m_Arguments:
@@ -6046,7 +6046,7 @@ Animator:
   m_GameObject: {fileID: 1613052878}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8b30899a1d2d47841b9f1719fb95c0bb, type: 2}
+  m_Controller: {fileID: 22100000, guid: faf95cba03274e04cae4452e6b86ec67, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6065,12 +6065,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1613052878}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a927dc9edb541141860583107e64523, type: 3}
+  m_Script: {fileID: 11500000, guid: 99f4ccd5e852b0a4fa5e3564a0d0c8de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   numberPad: {fileID: 977997664}
-  numberPadText: {fileID: 977667237}
-  number: 1
   animator: {fileID: 1613052882}
 --- !u!114 &1613052884
 MonoBehaviour:
@@ -6117,8 +6115,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1613052883}
-        m_TargetAssemblyTypeName: NumberPadButton, Assembly-CSharp
-        m_MethodName: InputNumber
+        m_TargetAssemblyTypeName: BackspaceButton, Assembly-CSharp
+        m_MethodName: RemoveNumber
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6183,7 +6181,7 @@ GameObject:
   - component: {fileID: 1615917169}
   - component: {fileID: 1615917168}
   m_Layer: 5
-  m_Name: Numpad 1 (8)
+  m_Name: Numpad 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6302,9 +6300,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberPad: {fileID: 977997664}
+  animator: {fileID: 1615917170}
   numberPadText: {fileID: 1300732571}
   number: 9
-  animator: {fileID: 1615917170}
 --- !u!114 &1615917172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6643,7 +6641,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 19d82d53cdb0c50418324d18c9e27fa0, type: 2}
   m_sharedMaterial: {fileID: 230447621955668390, guid: 19d82d53cdb0c50418324d18c9e27fa0, type: 2}
@@ -6963,6 +6961,81 @@ MonoBehaviour:
   ConformX: 1
   ConformY: 1
   Logging: 0
+--- !u!1 &1757620564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1757620565}
+  - component: {fileID: 1757620567}
+  - component: {fileID: 1757620566}
+  m_Layer: 5
+  m_Name: Icon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1757620565
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757620564}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1613052879}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 601, y: 360}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1757620566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757620564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0.45882356, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 79833b23f3fd60741ba7380ff947f772, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1757620567
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757620564}
+  m_CullTransparentMesh: 1
 --- !u!1 &1960873517
 GameObject:
   m_ObjectHideFlags: 0
@@ -7154,7 +7227,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 19d82d53cdb0c50418324d18c9e27fa0, type: 2}
   m_sharedMaterial: {fileID: 230447621955668390, guid: 19d82d53cdb0c50418324d18c9e27fa0, type: 2}
@@ -7302,7 +7375,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 150}
+  m_AnchoredPosition: {x: 0, y: 132}
   m_SizeDelta: {x: -88, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2046156830
@@ -8137,7 +8210,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 7
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 19d82d53cdb0c50418324d18c9e27fa0, type: 2}
   m_sharedMaterial: {fileID: 230447621955668390, guid: 19d82d53cdb0c50418324d18c9e27fa0, type: 2}
@@ -8471,9 +8544,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberPad: {fileID: 977997664}
+  animator: {fileID: 2116913299949040886}
   numberPadText: {fileID: 5483122574273437225}
   number: 1
-  animator: {fileID: 2116913299949040886}
 --- !u!114 &5483122574273437225
 MonoBehaviour:
   m_ObjectHideFlags: 0
