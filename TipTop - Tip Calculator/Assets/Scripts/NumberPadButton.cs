@@ -7,7 +7,6 @@ using TMPro;
 public class NumberPadButton : PadButton
 {
     [Header("Number Pad Button"), Space(8)]
-    [SerializeField] protected TMP_Text numberPadText;
     [SerializeField] protected int number;
 
     protected override void Start()
@@ -16,14 +15,9 @@ public class NumberPadButton : PadButton
         SetNumberPadText(number);
     }
 
-    private void OnValidate()
-    {
-        //SetNumberPadText(number);
-    }
-
     protected void SetNumberPadText(int num)
     {
-        numberPadText.text = $"{num}";
+        buttonText.text = $"{num}";
     }
 
     public void InputNumber()

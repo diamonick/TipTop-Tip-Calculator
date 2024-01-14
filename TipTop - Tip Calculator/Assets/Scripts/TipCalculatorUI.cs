@@ -16,6 +16,9 @@ public class TipCalculatorUI : MonoBehaviour
 
     [Header("Color Theme"), Space(8)]
     [SerializeField] private ColorTheme colorThemePref;
+    public ColorTheme ColorThemePref { get { return colorThemePref; } }
+    [SerializeField] private bool darkMode;
+    public bool DarkMode { get { return darkMode; } }
     [SerializeField] private bool testColorTheme;
 
     [Header("UI Text")]
@@ -42,20 +45,30 @@ public class TipCalculatorUI : MonoBehaviour
     [SerializeField] private Image splitSliderBkg;
     [SerializeField] private UIGradient gradientSplitFill;
 
+    [Header("Number Pad"), Space(8)]
+    [SerializeField] private NumberPad numberPad;
+
     private void Start()
     {
         TC = TipCalculator.Instance;
 
         tipPercentageSlider.value = TC.TipPercentage;
         splitSlider.value = TC.Split;
+
+        UpdateUIColorTheme();
     }
 
     private void OnValidate()
     {
-        if (testColorTheme)
-        {
-            testColorTheme = false;
+        //if (testColorTheme)
+        //{
+        //    testColorTheme = false;
+        //    UpdateUIColorTheme();
+        //}
+    }
 
+    private void UpdateUIColorTheme()
+    {
             tipPercentageHeader.color = colorThemePref.primaryColor;
             tipPercentageText.color = colorThemePref.primaryColor;
             splitHeader.color = colorThemePref.primaryColor;
@@ -63,14 +76,15 @@ public class TipCalculatorUI : MonoBehaviour
 
             gradienBillAmountBox.LinearGradient = colorThemePref.mainGradent;
 
-            tipPercentageSliderBkg.color = colorThemePref.tertiaryColor;
+            tipPercentageSliderBkg.color = darkMode ? colorThemePref.darkColor : colorThemePref.tertiaryColor;
             gradientTipPercentageFill.LinearGradient = colorThemePref.mainGradent;
-            splitSliderBkg.color = colorThemePref.tertiaryColor;
+            splitSliderBkg.color = darkMode ? colorThemePref.darkColor : colorThemePref.tertiaryColor;
             gradientSplitFill.LinearGradient = colorThemePref.mainGradent;
 
             gradientTopBackground.LinearGradient = colorThemePref.mainGradent;
-            gradientBackground.LinearGradient = colorThemePref.lightBackgroundGradent;
-        }
+            gradientBackground.LinearGradient = darkMode ? colorThemePref.darkBackgroundGradent : colorThemePref.lightBackgroundGradent;
+
+            numberPad.UpdateButtonColors();
     }
 
     /// <summary>

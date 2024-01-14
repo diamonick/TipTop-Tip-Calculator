@@ -16,4 +16,6 @@ public class ColorTheme : ScriptableObject
     public Color primaryColor;
     public Color secondaryColor;
     public Color tertiaryColor;
+    public Color lightColor;
+    public Color darkColor;
 }

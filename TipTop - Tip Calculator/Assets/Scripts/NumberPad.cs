@@ -11,6 +11,14 @@ public class NumberPad : MonoBehaviour
     [SerializeField] private string billAmountInput;
     [SerializeField] private PadButton[] numpadButtons;
 
+    public void UpdateButtonColors()
+    {
+        foreach (PadButton pb in numpadButtons)
+        {
+            pb.SetButtonColors();
+        }
+    }
+
     /// <summary>
     /// Add numerical digit to the Bill Amount field.
     /// </summary>
