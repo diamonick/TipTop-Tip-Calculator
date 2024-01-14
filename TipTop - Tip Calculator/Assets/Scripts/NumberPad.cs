@@ -68,8 +68,15 @@ public class NumberPad : MonoBehaviour
         // Parse the Bill Amount string into a float value. If TRUE, set the Bill Amount.
         if (float.TryParse(billAmountInput, out bill))
         {
-            bill = bill / 100f;
-            TipCalculator.Instance.SetBillAmount(bill);
+            if (bill == 0f)
+            {
+                billAmountInput = "";
+            }
+            else
+            {
+                bill = bill / 100f;
+                TipCalculator.Instance.SetBillAmount(bill);
+            }
         }
     }
 }
