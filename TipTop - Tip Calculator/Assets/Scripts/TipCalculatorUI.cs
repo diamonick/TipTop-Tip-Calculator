@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using StringExtensionMethods;
+using JoshH.UI;
 
 public class TipCalculatorUI : MonoBehaviour
 {
@@ -13,9 +14,15 @@ public class TipCalculatorUI : MonoBehaviour
     // Constants
     private const int NUM_OF_DECIMAL_PLACES = 2;
 
-    [Header("UI")]
+    [Header("Color Theme"), Space(8)]
+    [SerializeField] private ColorTheme colorThemePref;
+    [SerializeField] private bool testColorTheme;
+
+    [Header("UI Text")]
     [SerializeField] private TMP_Text billAmountText;
+    [SerializeField] private TMP_Text tipPercentageHeader;
     [SerializeField] private TMP_Text tipPercentageText;
+    [SerializeField] private TMP_Text splitHeader;
     [SerializeField] private TMP_Text splitText;
 
     [SerializeField] private TMP_Text totalBillAmountText;
@@ -23,9 +30,17 @@ public class TipCalculatorUI : MonoBehaviour
     [SerializeField] private TMP_Text totalBillPerPersonText;
     [SerializeField] private TMP_Text tipPerPersonText;
 
+    [SerializeField] private UIGradient gradientBackground;
+    [SerializeField] private UIGradient gradientTopBackground;
+    [SerializeField] private UIGradient gradienBillAmountBox;
+
     [Header("Sliders"), Space(8)]
     public Slider tipPercentageSlider;
+    [SerializeField] private Image tipPercentageSliderBkg;
+    [SerializeField] private UIGradient gradientTipPercentageFill;
     public Slider splitSlider;
+    [SerializeField] private Image splitSliderBkg;
+    [SerializeField] private UIGradient gradientSplitFill;
 
     private void Start()
     {
@@ -33,6 +48,29 @@ public class TipCalculatorUI : MonoBehaviour
 
         tipPercentageSlider.value = TC.TipPercentage;
         splitSlider.value = TC.Split;
+    }
+
+    private void OnValidate()
+    {
+        if (testColorTheme)
+        {
+            testColorTheme = false;
+
+            tipPercentageHeader.color = colorThemePref.primaryColor;
+            tipPercentageText.color = colorThemePref.primaryColor;
+            splitHeader.color = colorThemePref.primaryColor;
+            splitText.color = colorThemePref.primaryColor;
+
+            gradienBillAmountBox.LinearGradient = colorThemePref.mainGradent;
+
+            tipPercentageSliderBkg.color = colorThemePref.tertiaryColor;
+            gradientTipPercentageFill.LinearGradient = colorThemePref.mainGradent;
+            splitSliderBkg.color = colorThemePref.tertiaryColor;
+            gradientSplitFill.LinearGradient = colorThemePref.mainGradent;
+
+            gradientTopBackground.LinearGradient = colorThemePref.mainGradent;
+            gradientBackground.LinearGradient = colorThemePref.lightBackgroundGradent;
+        }
     }
 
     /// <summary>

@@ -28,8 +28,6 @@ public class TipCalculator : MonoBehaviour
 
     [Header("User Interface"), Space(8)]
     public TipCalculatorUI UI;
-    [SerializeField] private Color colorPref;
-    public Color ColorPreference { get { return colorPref; } }
 
     private void Awake()
     {
