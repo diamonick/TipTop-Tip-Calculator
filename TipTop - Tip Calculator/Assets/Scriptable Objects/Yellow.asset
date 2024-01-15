@@ -103,4 +103,4 @@ MonoBehaviour:
   secondaryColor: {r: 1, g: 0.8745098, b: 0, a: 1}
   tertiaryColor: {r: 1, g: 0.95482796, b: 0.8254717, a: 1}
   lightColor: {r: 1, g: 1, b: 1, a: 1}
-  darkColor: {r: 0.2, g: 0.13846155, b: 0, a: 1}
+  darkColor: {r: 0.2, g: 0.13658537, b: 0, a: 1}
