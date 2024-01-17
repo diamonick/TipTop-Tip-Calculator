@@ -39,9 +39,13 @@ public class TipCalculatorUI : MonoBehaviour
 
     [Header("Sliders"), Space(8)]
     public Slider tipPercentageSlider;
+    [SerializeField] private Image tipPercentageSliderBlurShadow;
+    [SerializeField] private Image tipPercentageSliderOutline;
     [SerializeField] private Image tipPercentageSliderBkg;
     [SerializeField] private UIGradient gradientTipPercentageFill;
     public Slider splitSlider;
+    [SerializeField] private Image splitSliderBlurShadow;
+    [SerializeField] private Image splitSliderOutline;
     [SerializeField] private Image splitSliderBkg;
     [SerializeField] private UIGradient gradientSplitFill;
 
@@ -69,22 +73,26 @@ public class TipCalculatorUI : MonoBehaviour
 
     private void UpdateUIColorTheme()
     {
-            tipPercentageHeader.color = colorThemePref.primaryColor;
-            tipPercentageText.color = colorThemePref.primaryColor;
-            splitHeader.color = colorThemePref.primaryColor;
-            splitText.color = colorThemePref.primaryColor;
+        tipPercentageHeader.color = colorThemePref.primaryColor;
+        tipPercentageText.color = colorThemePref.primaryColor;
+        splitHeader.color = colorThemePref.primaryColor;
+        splitText.color = colorThemePref.primaryColor;
 
-            gradienBillAmountBox.LinearGradient = colorThemePref.mainGradent;
+        gradienBillAmountBox.LinearGradient = colorThemePref.mainGradent;
 
-            tipPercentageSliderBkg.color = darkMode ? colorThemePref.darkColor : colorThemePref.tertiaryColor;
-            gradientTipPercentageFill.LinearGradient = colorThemePref.mainGradent;
-            splitSliderBkg.color = darkMode ? colorThemePref.darkColor : colorThemePref.tertiaryColor;
-            gradientSplitFill.LinearGradient = colorThemePref.mainGradent;
+        tipPercentageSliderBkg.color = darkMode ? colorThemePref.darkColor : colorThemePref.tertiaryColor;
+        tipPercentageSliderBlurShadow.color = colorThemePref.primaryColor;
+        tipPercentageSliderOutline.color = colorThemePref.secondaryColor;
+        gradientTipPercentageFill.LinearGradient = colorThemePref.mainGradent;
+        splitSliderBkg.color = darkMode ? colorThemePref.darkColor : colorThemePref.tertiaryColor;
+        splitSliderBlurShadow.color = colorThemePref.primaryColor;
+        splitSliderOutline.color = colorThemePref.secondaryColor;
+        gradientSplitFill.LinearGradient = colorThemePref.mainGradent;
 
-            gradientTopBackground.LinearGradient = colorThemePref.mainGradent;
-            gradientBackground.LinearGradient = darkMode ? colorThemePref.darkBackgroundGradent : colorThemePref.lightBackgroundGradent;
+        gradientTopBackground.LinearGradient = colorThemePref.mainGradent;
+        gradientBackground.LinearGradient = darkMode ? colorThemePref.darkBackgroundGradent : colorThemePref.lightBackgroundGradent;
 
-            numberPad.UpdateButtonColors();
+        numberPad.UpdateButtonColors();
     }
 
     /// <summary>
