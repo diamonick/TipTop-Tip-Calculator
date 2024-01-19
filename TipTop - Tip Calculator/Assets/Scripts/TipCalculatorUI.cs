@@ -12,7 +12,8 @@ public class TipCalculatorUI : MonoBehaviour
     private TipCalculator TC;
 
     // Constants
-    private const int NUM_OF_DECIMAL_PLACES = 2;
+    private const int BILL_AMOUNT_TEXT_SIZE = 200;
+    private const int VALUE_TEXT_SIZE = 108;
 
     [Header("Color Theme"), Space(8)]
     [SerializeField] private ColorTheme colorThemePref;
@@ -101,7 +102,7 @@ public class TipCalculatorUI : MonoBehaviour
     /// <param name="amount">Bill amount ($).</param>
     public void SetBillAmountText(float amount)
     {
-        billAmountText.text = FormatText(amount, 200);
+        billAmountText.text = FormatText(amount, BILL_AMOUNT_TEXT_SIZE);
     }
 
     /// <summary>
@@ -129,7 +130,7 @@ public class TipCalculatorUI : MonoBehaviour
     /// <param name="amount">Total Bill amount ($).</param>
     public void SetTotalBillAmountText(float amount)
     {
-        totalBillAmountText.text = FormatText(amount, 128);
+        totalBillAmountText.text = FormatText(amount, VALUE_TEXT_SIZE);
     }
 
     /// <summary>
@@ -138,7 +139,7 @@ public class TipCalculatorUI : MonoBehaviour
     /// <param name="amount">Total Tip amount ($).</param>
     public void SetTotalTipAmountText(float amount)
     {
-        totalTipAmountText.text = FormatText(amount, 128);
+        totalTipAmountText.text = FormatText(amount, VALUE_TEXT_SIZE);
     }
 
     /// <summary>
@@ -147,7 +148,7 @@ public class TipCalculatorUI : MonoBehaviour
     /// <param name="amount">Total Bill Per Person ($).</param>
     public void SetTotalBillPerPersonText(float amount)
     {
-        totalBillPerPersonText.text = FormatText(amount, 128);
+        totalBillPerPersonText.text = FormatText(amount, VALUE_TEXT_SIZE);
     }
 
     /// <summary>
@@ -156,7 +157,7 @@ public class TipCalculatorUI : MonoBehaviour
     /// <param name="amount">Tip Per Person ($).</param>
     public void SetTipPerPersonText(float amount)
     {
-        tipPerPersonText.text = FormatText(amount, 128);
+        tipPerPersonText.text = FormatText(amount, VALUE_TEXT_SIZE);
     }
 
     /// <summary>
