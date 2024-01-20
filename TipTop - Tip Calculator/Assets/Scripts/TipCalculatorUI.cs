@@ -63,15 +63,6 @@ public class TipCalculatorUI : MonoBehaviour
         UpdateUIColorTheme();
     }
 
-    private void OnValidate()
-    {
-        //if (testColorTheme)
-        //{
-        //    testColorTheme = false;
-        //    UpdateUIColorTheme();
-        //}
-    }
-
     private void UpdateUIColorTheme()
     {
         tipPercentageHeader.color = colorThemePref.primaryColor;
@@ -94,6 +85,26 @@ public class TipCalculatorUI : MonoBehaviour
         gradientBackground.LinearGradient = darkMode ? colorThemePref.darkBackgroundGradent : colorThemePref.lightBackgroundGradent;
 
         numberPad.UpdateButtonColors();
+    }
+
+    /// <summary>
+    /// Set user's color theme.
+    /// </summary>
+    /// <param name="colorTheme">New color theme.</param>
+    public void SetColorTheme(ColorTheme colorTheme)
+    {
+        colorThemePref = colorTheme;
+        UpdateUIColorTheme();
+    }
+
+    /// <summary>
+    /// Toggle the Dark Mode setting and update the UI's color theme accordingly.
+    /// </summary>
+    /// <param name="isOn">Boolean to toggle the Dark Mode setting.</param>
+    public void ToggleDarkMode(bool isOn)
+    {
+        darkMode = isOn;
+        UpdateUIColorTheme();
     }
 
     /// <summary>
