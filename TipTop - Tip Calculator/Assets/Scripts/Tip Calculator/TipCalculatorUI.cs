@@ -53,6 +53,7 @@ public class TipCalculatorUI : MonoBehaviour
     [Header("Number Pad"), Space(8)]
     [SerializeField] private NumberPad numberPad;
 
+
     private void Start()
     {
         TC = TipCalculator.Instance;
