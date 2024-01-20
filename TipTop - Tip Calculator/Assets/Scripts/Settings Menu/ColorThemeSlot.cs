@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using JoshH.UI;
+using UnityEngine.EventSystems;
 
-public class ColorThemeSlot : MonoBehaviour
+public class ColorThemeSlot : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     // Tip Calculator Instance
     private TipCalculator TC;
@@ -14,6 +15,7 @@ public class ColorThemeSlot : MonoBehaviour
     [SerializeField] private UIGradient uiGradient;
     [SerializeField] private GameObject checkmark;
     [SerializeField] private Image blurShadow;
+    [SerializeField] private Animator animator;
     public ColorTheme ColorTheme => colorTheme;
     [SerializeField] private bool isChecked;
 
@@ -21,21 +23,48 @@ public class ColorThemeSlot : MonoBehaviour
     {
         TC = TipCalculator.Instance;
 
+        InitializeSlot();
+    }
+
+    private void InitializeSlot()
+    {
         uiGradient.LinearGradient = colorTheme.mainGradent;
-        blurShadow.color = TC.UI.ColorThemePref.primaryColor;
+        blurShadow.color = TC.Settings.ColorThemePref.primaryColor;
         blurShadow.color *= new Color(1f, 1f, 1f, 0.25f);
 
-        checkmark.SetActive(isChecked);
+        if (isChecked)
+        {
+            Check();
+        }
+        else
+        {
+            Uncheck();
+        }
     }
 
-    /// <summary>
-    /// Set the UI's color theme.
-    /// </summary>
-    public void SetColorTheme()
+    public void Check()
     {
-        TC.UI.SetColorTheme(colorTheme);
-
         isChecked = true;
         checkmark.SetActive(true);
+
+        TC.Settings.SetColorTheme(this);
     }
+
+    public void Uncheck()
+    {
+        isChecked = false;
+        checkmark.SetActive(false);
+    }
+
+    #region On Pointer Method(s)
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        animator.SetBool("Pressed?", true);
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        animator.SetBool("Pressed?", false);
+    }
+    #endregion
 }

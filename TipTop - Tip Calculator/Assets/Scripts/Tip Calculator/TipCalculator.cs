@@ -28,6 +28,7 @@ public class TipCalculator : MonoBehaviour
 
     [Header("User Interface"), Space(8)]
     public TipCalculatorUI UI;
+    public SettingsMenu Settings;
 
     private void Awake()
     {

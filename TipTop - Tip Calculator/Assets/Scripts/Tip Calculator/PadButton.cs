@@ -29,9 +29,10 @@ public class PadButton : MonoBehaviour
     public void SetButtonColors()
     {
         TC = TipCalculator.Instance;
-        ColorTheme colorTheme = TC.UI.ColorThemePref;
 
-        bool darkMode = TC.UI.DarkMode;
+        ColorTheme colorTheme = TC.Settings.ColorThemePref;
+        bool darkMode = TC.Settings.DarkMode;
+
         lightColor = colorTheme.lightColor;
         pressedColor = colorTheme.primaryColor;
         releasedColor = darkMode ? colorTheme.darkColor : colorTheme.lightColor;

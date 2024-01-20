@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2674447878452665158}
   - component: {fileID: 5578758742546838701}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -410,7 +410,7 @@ GameObject:
   - component: {fileID: 8394325492423498729}
   - component: {fileID: 8394325492423498731}
   - component: {fileID: 8394325492423498727}
-  - component: {fileID: 8394325492423498726}
+  - component: {fileID: 8988082603297363178}
   m_Layer: 5
   m_Name: Color Theme Slot
   m_TagString: Untagged
@@ -464,6 +464,7 @@ MonoBehaviour:
   uiGradient: {fileID: 8394325491976286004}
   checkmark: {fileID: 8394325492118186396}
   blurShadow: {fileID: 8394325491832521156}
+  animator: {fileID: 8394325492423498727}
   isChecked: 0
 --- !u!95 &8394325492423498727
 Animator:
@@ -485,7 +486,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &8394325492423498726
+--- !u!114 &8988082603297363178
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -525,13 +526,13 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 5578758742546838701}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8394325492423498731}
         m_TargetAssemblyTypeName: ColorThemeSlot, Assembly-CSharp
-        m_MethodName: SetColorTheme
+        m_MethodName: Check
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

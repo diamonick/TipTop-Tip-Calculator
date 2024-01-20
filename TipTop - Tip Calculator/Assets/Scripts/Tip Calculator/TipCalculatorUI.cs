@@ -15,13 +15,6 @@ public class TipCalculatorUI : MonoBehaviour
     private const int BILL_AMOUNT_TEXT_SIZE = 200;
     private const int VALUE_TEXT_SIZE = 108;
 
-    [Header("Color Theme"), Space(8)]
-    [SerializeField] private ColorTheme colorThemePref;
-    public ColorTheme ColorThemePref { get { return colorThemePref; } }
-    [SerializeField] private bool darkMode;
-    public bool DarkMode { get { return darkMode; } }
-    [SerializeField] private bool testColorTheme;
-
     [Header("UI Text")]
     [SerializeField] private TMP_Text billAmountText;
     [SerializeField] private TMP_Text tipPercentageHeader;
@@ -53,7 +46,6 @@ public class TipCalculatorUI : MonoBehaviour
     [Header("Number Pad"), Space(8)]
     [SerializeField] private NumberPad numberPad;
 
-
     private void Start()
     {
         TC = TipCalculator.Instance;
@@ -61,51 +53,34 @@ public class TipCalculatorUI : MonoBehaviour
         tipPercentageSlider.value = TC.TipPercentage;
         splitSlider.value = TC.Split;
 
-        UpdateUIColorTheme();
+        UpdateUI();
     }
 
-    private void UpdateUIColorTheme()
+    public void UpdateUI()
     {
-        tipPercentageHeader.color = colorThemePref.primaryColor;
-        tipPercentageText.color = colorThemePref.primaryColor;
-        splitHeader.color = colorThemePref.primaryColor;
-        splitText.color = colorThemePref.primaryColor;
+        ColorTheme colorTheme = TC.Settings.ColorThemePref;
+        bool darkMode = TC.Settings.DarkMode;
 
-        gradienBillAmountBox.LinearGradient = colorThemePref.mainGradent;
+        tipPercentageHeader.color = colorTheme.primaryColor;
+        tipPercentageText.color = colorTheme.primaryColor;
+        splitHeader.color = colorTheme.primaryColor;
+        splitText.color = colorTheme.primaryColor;
 
-        tipPercentageSliderBkg.color = darkMode ? colorThemePref.darkColor : colorThemePref.tertiaryColor;
-        tipPercentageSliderBlurShadow.color = colorThemePref.primaryColor;
-        tipPercentageSliderOutline.color = colorThemePref.secondaryColor;
-        gradientTipPercentageFill.LinearGradient = colorThemePref.mainGradent;
-        splitSliderBkg.color = darkMode ? colorThemePref.darkColor : colorThemePref.tertiaryColor;
-        splitSliderBlurShadow.color = colorThemePref.primaryColor;
-        splitSliderOutline.color = colorThemePref.secondaryColor;
-        gradientSplitFill.LinearGradient = colorThemePref.mainGradent;
+        gradienBillAmountBox.LinearGradient = colorTheme.mainGradent;
 
-        gradientTopBackground.LinearGradient = colorThemePref.mainGradent;
-        gradientBackground.LinearGradient = darkMode ? colorThemePref.darkBackgroundGradent : colorThemePref.lightBackgroundGradent;
+        tipPercentageSliderBkg.color = darkMode ? colorTheme.darkColor : colorTheme.tertiaryColor;
+        tipPercentageSliderBlurShadow.color = colorTheme.primaryColor;
+        tipPercentageSliderOutline.color = colorTheme.secondaryColor;
+        gradientTipPercentageFill.LinearGradient = colorTheme.mainGradent;
+        splitSliderBkg.color = darkMode ? colorTheme.darkColor : colorTheme.tertiaryColor;
+        splitSliderBlurShadow.color = colorTheme.primaryColor;
+        splitSliderOutline.color = colorTheme.secondaryColor;
+        gradientSplitFill.LinearGradient = colorTheme.mainGradent;
+
+        gradientTopBackground.LinearGradient = colorTheme.mainGradent;
+        gradientBackground.LinearGradient = darkMode ? colorTheme.darkBackgroundGradent : colorTheme.lightBackgroundGradent;
 
         numberPad.UpdateButtonColors();
-    }
-
-    /// <summary>
-    /// Set user's color theme.
-    /// </summary>
-    /// <param name="colorTheme">New color theme.</param>
-    public void SetColorTheme(ColorTheme colorTheme)
-    {
-        colorThemePref = colorTheme;
-        UpdateUIColorTheme();
-    }
-
-    /// <summary>
-    /// Toggle the Dark Mode setting and update the UI's color theme accordingly.
-    /// </summary>
-    /// <param name="isOn">Boolean to toggle the Dark Mode setting.</param>
-    public void ToggleDarkMode(bool isOn)
-    {
-        darkMode = isOn;
-        UpdateUIColorTheme();
     }
 
     /// <summary>
