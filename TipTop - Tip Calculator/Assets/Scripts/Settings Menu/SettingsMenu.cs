@@ -27,8 +27,10 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] private ColorThemeSlot[] colorThemeSlots;
     private ColorThemeSlot markedColorThemeSlot;
 
+    [Header("Dark Mode"), Space(8)]
     [SerializeField] private bool darkMode;
     public bool DarkMode { get { return darkMode; } }
+    [SerializeField] private ToggleButton darkModeToggleButton;
 
     [Header("Rounding"), Space(8)]
     [SerializeField] private RoundingType roundTip;
@@ -86,8 +88,7 @@ public class SettingsMenu : MonoBehaviour
     /// </summary>
     public void ToggleDarkMode()
     {
-        darkMode = !darkMode;
-
+        darkModeToggleButton.Toggle(ref darkMode);
         UpdateUI();
         TC.UI.UpdateUI();
     }
@@ -120,6 +121,8 @@ public class SettingsMenu : MonoBehaviour
         colorThemeHeaderText.color = colorThemePref.primaryColor;
         colorThemeScrollBar.color = colorThemePref.primaryColor;
         colorThemeScrollBarBkg.color = darkMode ? colorThemePref.darkColor : colorThemePref.tertiaryColor;
+
+        darkModeToggleButton.UpdateUI();
 
         darkModeText.color = colorThemePref.primaryColor;
         roundTipText.color = colorThemePref.primaryColor;

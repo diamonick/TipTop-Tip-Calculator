@@ -101,6 +101,6 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   primaryColor: {r: 0, g: 0.7058824, b: 0.33333334, a: 1}
   secondaryColor: {r: 0.72156864, g: 0.9882353, b: 0.12941177, a: 1}
-  tertiaryColor: {r: 0.9414549, g: 1, b: 0.80784315, a: 1}
+  tertiaryColor: {r: 0.86702365, g: 1, b: 0.6273585, a: 1}
   lightColor: {r: 1, g: 1, b: 1, a: 1}
   darkColor: {r: 0.018292684, g: 0.15, b: 0, a: 1}
