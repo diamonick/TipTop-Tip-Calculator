@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b1cf520feb12e244b45c5019a81992d, type: 3}
-  m_Name: Sweet Morning
+  m_Name: Maldives
   m_EditorClassIdentifier: 
   mainGradent:
     serializedVersion: 2
-    key0: {r: 1, g: 0.37254903, b: 0.42745098, a: 1}
-    key1: {r: 1, g: 0.7647059, b: 0.44313726, a: 1}
+    key0: {r: 0.05490196, g: 0.8235294, b: 0.96862745, a: 1}
+    key1: {r: 0.69803923, g: 0.99607843, b: 0.98039216, a: 1}
     key2: {r: 0, g: 0.81960785, b: 1, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -43,7 +43,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   lightBackgroundGradent:
     serializedVersion: 2
-    key0: {r: 1, g: 0.93333334, b: 0.80784315, a: 1}
+    key0: {r: 0.84705883, g: 0.99607843, b: 0.9882353, a: 1}
     key1: {r: 1, g: 1, b: 1, a: 1}
     key2: {r: 1, g: 1, b: 1, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
@@ -72,9 +72,9 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   darkBackgroundGradent:
     serializedVersion: 2
-    key0: {r: 0.1, g: 0.007692308, b: 0, a: 1}
-    key1: {r: 0.15, g: 0.05192308, b: 0, a: 1}
-    key2: {r: 1, g: 1, b: 1, a: 0}
+    key0: {r: 0.004615384, g: 0.050769225, b: 0.06, a: 1}
+    key1: {r: 0.083076924, g: 0.12, b: 0.12, a: 1}
+    key2: {r: 0, g: 0.81960785, b: 1, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
@@ -99,8 +99,8 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  primaryColor: {r: 1, g: 0.37254903, b: 0.42745098, a: 1}
-  secondaryColor: {r: 1, g: 0.7647059, b: 0.44313726, a: 1}
-  tertiaryColor: {r: 1, g: 0.93373907, b: 0.80784315, a: 1}
+  primaryColor: {r: 0.05490196, g: 0.8235294, b: 0.96862745, a: 1}
+  secondaryColor: {r: 0.69803923, g: 0.99607843, b: 0.98039216, a: 1}
+  tertiaryColor: {r: 0.84666663, g: 0.99607843, b: 0.9882147, a: 1}
   lightColor: {r: 1, g: 1, b: 1, a: 1}
-  darkColor: {r: 0.32, g: 0.1192157, b: 0.13678434, a: 1}
+  darkColor: {r: 0.01375, g: 0.18562499, b: 0.22, a: 1}

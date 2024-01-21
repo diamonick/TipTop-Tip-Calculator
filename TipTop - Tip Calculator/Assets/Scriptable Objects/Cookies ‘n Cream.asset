@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b1cf520feb12e244b45c5019a81992d, type: 3}
-  m_Name: Love Tonight
+  m_Name: "Cookies \u2018n Cream"
   m_EditorClassIdentifier: 
   mainGradent:
     serializedVersion: 2
-    key0: {r: 0.27058825, g: 0.40784314, b: 0.8627451, a: 1}
-    key1: {r: 0.6901961, g: 0.41568628, b: 0.7019608, a: 1}
+    key0: {r: 0.13333334, g: 0.13333334, b: 0.13333334, a: 1}
+    key1: {r: 0.44313726, g: 0.37254903, b: 0.3372549, a: 1}
     key2: {r: 0, g: 0.81960785, b: 1, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -43,7 +43,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   lightBackgroundGradent:
     serializedVersion: 2
-    key0: {r: 0.65568626, g: 0.70368004, b: 0.8627451, a: 1}
+    key0: {r: 0.827451, g: 0.77254903, b: 0.6862745, a: 1}
     key1: {r: 1, g: 1, b: 1, a: 1}
     key2: {r: 1, g: 1, b: 1, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
@@ -72,8 +72,8 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   darkBackgroundGradent:
     serializedVersion: 2
-    key0: {r: 0.015681818, g: 0.023636367, b: 0.05, a: 1}
-    key1: {r: 0.09832403, g: 0.059217878, b: 0.1, a: 1}
+    key0: {r: 0.05, g: 0.05, b: 0.05, a: 1}
+    key1: {r: 0.1, g: 0.08292683, b: 0.07560976, a: 1}
     key2: {r: 0, g: 0.81960785, b: 1, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -99,8 +99,8 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  primaryColor: {r: 0.27058825, g: 0.40784314, b: 0.8627451, a: 1}
-  secondaryColor: {r: 0.6901961, g: 0.41568628, b: 0.7019608, a: 1}
-  tertiaryColor: {r: 0.7988217, g: 0.7607843, b: 0.8627451, a: 1}
+  primaryColor: {r: 0.44313726, g: 0.37254903, b: 0.3372549, a: 1}
+  secondaryColor: {r: 0.13333334, g: 0.13333334, b: 0.13333334, a: 1}
+  tertiaryColor: {r: 0.82745105, g: 0.7725491, b: 0.6862745, a: 1}
   lightColor: {r: 1, g: 1, b: 1, a: 1}
-  darkColor: {r: 0.06272727, g: 0.09454547, b: 0.2, a: 1}
+  darkColor: {r: 0.184, g: 0.15469027, b: 0.1400354, a: 1}

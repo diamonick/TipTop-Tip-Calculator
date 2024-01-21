@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b1cf520feb12e244b45c5019a81992d, type: 3}
-  m_Name: Sweet Morning
+  m_Name: Piglet
   m_EditorClassIdentifier: 
   mainGradent:
     serializedVersion: 2
-    key0: {r: 1, g: 0.37254903, b: 0.42745098, a: 1}
-    key1: {r: 1, g: 0.7647059, b: 0.44313726, a: 1}
+    key0: {r: 0.93333334, g: 0.6117647, b: 0.654902, a: 1}
+    key1: {r: 1, g: 0.8666667, b: 0.88235295, a: 1}
     key2: {r: 0, g: 0.81960785, b: 1, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -43,7 +43,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   lightBackgroundGradent:
     serializedVersion: 2
-    key0: {r: 1, g: 0.93333334, b: 0.80784315, a: 1}
+    key0: {r: 1, g: 0.92941177, b: 0.9411765, a: 1}
     key1: {r: 1, g: 1, b: 1, a: 1}
     key2: {r: 1, g: 1, b: 1, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
@@ -72,9 +72,9 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   darkBackgroundGradent:
     serializedVersion: 2
-    key0: {r: 0.1, g: 0.007692308, b: 0, a: 1}
-    key1: {r: 0.15, g: 0.05192308, b: 0, a: 1}
-    key2: {r: 1, g: 1, b: 1, a: 0}
+    key0: {r: 0.050980393, g: 0.025490196, b: 0.030588243, a: 1}
+    key1: {r: 0.1, g: 0.05, b: 0.060526323, a: 1}
+    key2: {r: 0, g: 0.81960785, b: 1, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
@@ -99,8 +99,8 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  primaryColor: {r: 1, g: 0.37254903, b: 0.42745098, a: 1}
-  secondaryColor: {r: 1, g: 0.7647059, b: 0.44313726, a: 1}
-  tertiaryColor: {r: 1, g: 0.93373907, b: 0.80784315, a: 1}
+  primaryColor: {r: 0.93333334, g: 0.6117647, b: 0.654902, a: 1}
+  secondaryColor: {r: 1, g: 0.8666667, b: 0.88235295, a: 1}
+  tertiaryColor: {r: 1, g: 0.93, b: 0.94076926, a: 1}
   lightColor: {r: 1, g: 1, b: 1, a: 1}
-  darkColor: {r: 0.32, g: 0.1192157, b: 0.13678434, a: 1}
+  darkColor: {r: 0.2, g: 0.112500004, b: 0.134375, a: 1}

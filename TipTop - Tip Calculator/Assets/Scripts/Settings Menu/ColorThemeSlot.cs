@@ -61,7 +61,7 @@ public class ColorThemeSlot : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         bool darkMode = TC.Settings.DarkMode;
 
         slotBox.color = darkMode ? colorTheme.darkColor : colorTheme.lightColor;
-        blurShadow.color = colorTheme.primaryColor;
+        blurShadow.color = darkMode ? colorTheme.darkColor : colorTheme.primaryColor;
         blurShadow.color *= new Color(1f, 1f, 1f, 0.25f);
     }
 

@@ -52,7 +52,8 @@ public class PadButton : MonoBehaviour
 
         // Reassign button's colors.
         button.colors = buttonColors;
-        dropShadow.effectColor = new Color(colorTheme.primaryColor.r, colorTheme.primaryColor.g, colorTheme.primaryColor.b, 0.25f);
+        dropShadow.effectColor = darkMode ? colorTheme.darkColor : colorTheme.primaryColor;
+        dropShadow.effectColor *= new Color(1f, 1f, 1f, 0.25f);
 
         // Set button text color.
         SetTextColor(pressedColor);

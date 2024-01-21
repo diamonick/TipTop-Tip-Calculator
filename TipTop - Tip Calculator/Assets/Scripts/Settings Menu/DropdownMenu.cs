@@ -12,6 +12,7 @@ public class DropdownMenu : MonoBehaviour
 
     [Header("Dropdown Menu")]
     [SerializeField] private TMP_Dropdown dropdown;
+    [SerializeField] private Image dropdownListBkg;
     [SerializeField] private TMP_Text label;
     [SerializeField] private Image arrow;
     [SerializeField] private Image blurShadow;
@@ -53,7 +54,7 @@ public class DropdownMenu : MonoBehaviour
         dropdown.colors = dropdownColors;
 
         // Set dropdown's blur shadow color.
-        blurShadow.color = colorTheme.primaryColor;
+        blurShadow.color = darkMode ? colorTheme.darkColor : colorTheme.primaryColor;
         blurShadow.color *= new Color(1f, 1f, 1f, 0.25f);
 
         // Set dropdown label color.
@@ -61,6 +62,9 @@ public class DropdownMenu : MonoBehaviour
 
         // Set dropdown arrow color.
         SetArrowColor(pressedColor);
+
+        // Set dropdown list's background color.
+        dropdownListBkg.color = releasedColor;
     }
 
     #region Event Trigger Method(s)

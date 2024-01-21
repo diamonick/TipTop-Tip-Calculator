@@ -72,8 +72,8 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   darkBackgroundGradent:
     serializedVersion: 2
-    key0: {r: 0, g: 0.050980393, b: 0.011860068, a: 1}
-    key1: {r: 0.045037657, g: 0.101960786, b: 0, a: 1}
+    key0: {r: 0, g: 0.05, b: 0.011538458, a: 1}
+    key1: {r: 0.04210527, g: 0.1, b: 0, a: 1}
     key2: {r: 1, g: 1, b: 1, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -103,4 +103,4 @@ MonoBehaviour:
   secondaryColor: {r: 0.72156864, g: 0.9882353, b: 0.12941177, a: 1}
   tertiaryColor: {r: 0.86702365, g: 1, b: 0.6273585, a: 1}
   lightColor: {r: 1, g: 1, b: 1, a: 1}
-  darkColor: {r: 0.018292684, g: 0.15, b: 0, a: 1}
+  darkColor: {r: 0.026315784, g: 0.2, b: 0, a: 1}
