@@ -462,6 +462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorTheme: {fileID: 0}
   uiGradient: {fileID: 8394325491976286004}
+  slotBox: {fileID: 5578758742546838701}
   checkmark: {fileID: 8394325492118186396}
   blurShadow: {fileID: 8394325491832521156}
   animator: {fileID: 8394325492423498727}

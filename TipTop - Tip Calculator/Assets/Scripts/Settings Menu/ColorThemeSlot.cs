@@ -13,6 +13,7 @@ public class ColorThemeSlot : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     [Header("Color Theme Slot")]
     [SerializeField] private ColorTheme colorTheme;
     [SerializeField] private UIGradient uiGradient;
+    [SerializeField] private Image slotBox;
     [SerializeField] private GameObject checkmark;
     [SerializeField] private Image blurShadow;
     [SerializeField] private Animator animator;
@@ -26,6 +27,9 @@ public class ColorThemeSlot : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         InitializeSlot();
     }
 
+    /// <summary>
+    /// Initialize color theme slot.
+    /// </summary>
     private void InitializeSlot()
     {
         uiGradient.LinearGradient = colorTheme.mainGradent;
@@ -42,14 +46,40 @@ public class ColorThemeSlot : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         }
     }
 
+    /// <summary>
+    /// Update the UI elements of the color theme slot.
+    /// </summary>
+    public void UpdateUI()
+    {
+        if (TC == null)
+        {
+            TC = TipCalculator.Instance;
+            InitializeSlot();
+        }
+
+        ColorTheme colorTheme = TC.Settings.ColorThemePref;
+        bool darkMode = TC.Settings.DarkMode;
+
+        slotBox.color = darkMode ? colorTheme.darkColor : colorTheme.lightColor;
+        blurShadow.color = colorTheme.primaryColor;
+        blurShadow.color *= new Color(1f, 1f, 1f, 0.25f);
+    }
+
+    /// <summary>
+    /// Mark this slot as checked.
+    /// </summary>
     public void Check()
     {
         isChecked = true;
         checkmark.SetActive(true);
 
+        // Update the UI's color theme.
         TC.Settings.SetColorTheme(this);
     }
 
+    /// <summary>
+    /// Mark this slot as unchecked.
+    /// </summary>
     public void Uncheck()
     {
         isChecked = false;
