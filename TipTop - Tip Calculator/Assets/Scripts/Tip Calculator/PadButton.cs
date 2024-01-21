@@ -26,9 +26,15 @@ public class PadButton : MonoBehaviour
         TC = TipCalculator.Instance;
     }
 
+    /// <summary>
+    /// Set button's colors (Normal, Highlighted, Pressed, Selected, and Disabled).
+    /// </summary>
     public void SetButtonColors()
     {
-        TC = TipCalculator.Instance;
+        if (TC == null)
+        {
+            TC = TipCalculator.Instance;
+        }
 
         ColorTheme colorTheme = TC.Settings.ColorThemePref;
         bool darkMode = TC.Settings.DarkMode;
@@ -37,7 +43,7 @@ public class PadButton : MonoBehaviour
         pressedColor = colorTheme.primaryColor;
         releasedColor = darkMode ? colorTheme.darkColor : colorTheme.lightColor;
 
-        // Get button's colors (Normal, Highlighted, Pressed, Selected, and Disabled).
+        // Get button's colors (Normal, Highlighted, Pressed, and Selected).
         ColorBlock buttonColors = button.colors;
         buttonColors.normalColor = releasedColor;
         buttonColors.highlightedColor = releasedColor;
@@ -49,16 +55,10 @@ public class PadButton : MonoBehaviour
         dropShadow.effectColor = new Color(colorTheme.primaryColor.r, colorTheme.primaryColor.g, colorTheme.primaryColor.b, 0.25f);
 
         // Set button text color.
-        if (buttonText != null)
-        {
-            SetTextColor(pressedColor);
-        }
+        SetTextColor(pressedColor);
 
         // Set icon color.
-        if (icon != null)
-        {
-            SetIconColor(pressedColor);
-        }
+        SetIconColor(pressedColor);
     }
 
     /// <summary>

@@ -31,13 +31,9 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] private Image colorThemeScrollBarBkg;
     [SerializeField] private TMP_Text darkModeText;
     [SerializeField] private TMP_Text roundTipText;
-    [SerializeField] private Image roundTipDropdownBox;
-    [SerializeField] private TMP_Text roundTipDropdownLabel;
-    [SerializeField] private Image roundTipDropdownArrow;
+    [SerializeField] private DropdownMenu roundTipDropdownMenu;
     [SerializeField] private TMP_Text roundTotalText;
-    [SerializeField] private Image roundTotalDropdownBox;
-    [SerializeField] private TMP_Text roundTotalDropdownLabel;
-    [SerializeField] private Image roundTotalDropdownArrow;
+    [SerializeField] private DropdownMenu roundTotalDropdownMenu;
 
     private void Start()
     {
@@ -96,11 +92,9 @@ public class SettingsMenu : MonoBehaviour
 
         darkModeText.color = colorThemePref.primaryColor;
         roundTipText.color = colorThemePref.primaryColor;
-        roundTipDropdownLabel.color = colorThemePref.primaryColor;
-        roundTipDropdownArrow.color = colorThemePref.primaryColor;
+        roundTipDropdownMenu.SetDropdownColors();
         roundTotalText.color = colorThemePref.primaryColor;
-        roundTotalDropdownLabel.color = colorThemePref.primaryColor;
-        roundTotalDropdownArrow.color = colorThemePref.primaryColor;
+        roundTotalDropdownMenu.SetDropdownColors();
 
         foreach (ColorThemeSlot slot in colorThemeSlots)
         {
