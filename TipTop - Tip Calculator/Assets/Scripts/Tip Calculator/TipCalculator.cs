@@ -94,7 +94,22 @@ public class TipCalculator : MonoBehaviour
     /// </summary>
     public void CalculateTotalBillAmount()
     {
-        float result = billAmount * (1f + ((float)tipPercentage / 100f));
+        // Total Bill Amount = Bill Amount + Total Tip Amount
+        float result = billAmount + totalTipAmount;
+
+        // Round Total Bill Amount.
+        switch (Settings.RoundTotal)
+        {
+            // Round Up
+            case SettingsMenu.RoundingType.RoundUp:
+                result = Mathf.Ceil(result);
+                break;
+            // Round Down
+            case SettingsMenu.RoundingType.RoundDown:
+                result = Mathf.Floor(result);
+                break;
+        }
+
         totalBillAmount = result;
         UI.SetTotalBillAmountText(totalBillAmount);
     }
@@ -104,7 +119,22 @@ public class TipCalculator : MonoBehaviour
     /// </summary>
     public void CalculateTotalTipAmount()
     {
+        // Total Tip Amount = Bill Amount × (Tip Percentage / 100)
         float result = billAmount * ((float)tipPercentage / 100f);
+
+        // Round Total Tip Amount.
+        switch (Settings.RoundTip)
+        {
+            // Round Up
+            case SettingsMenu.RoundingType.RoundUp:
+                result = Mathf.Ceil(result);
+                break;
+            // Round Down
+            case SettingsMenu.RoundingType.RoundDown:
+                result = Mathf.Floor(result);
+                break;
+        }
+
         totalTipAmount = result;
         UI.SetTotalTipAmountText(totalTipAmount);
     }
@@ -114,6 +144,7 @@ public class TipCalculator : MonoBehaviour
     /// </summary>
     public void CalculateTotalBillPerPerson()
     {
+        // Total Bill Per Person = Total Bill Amount / Split
         float result = totalBillAmount / split;
         totalBillPerPerson = result;
         UI.SetTotalBillPerPersonText(totalBillPerPerson);
@@ -124,6 +155,7 @@ public class TipCalculator : MonoBehaviour
     /// </summary>
     public void CalculateTipPerPerson()
     {
+        // Tip Per Person = Total Tip Amount / Split
         float result = totalTipAmount / split;
         tipPerPerson = result;
         UI.SetTipPerPersonText(tipPerPerson);

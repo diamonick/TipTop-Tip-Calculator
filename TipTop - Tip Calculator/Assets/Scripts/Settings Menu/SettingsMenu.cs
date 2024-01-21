@@ -10,6 +10,13 @@ public class SettingsMenu : MonoBehaviour
     // Tip Calculator Instance
     private TipCalculator TC;
 
+    public enum RoundingType
+    {
+        Exact = 0,
+        RoundUp = 1,
+        RoundDown = 2
+    }
+
     [Header("Settings Menu")]
     [SerializeField] private Animator animator;
     [SerializeField] private GraphicRaycaster graphicRaycaster;
@@ -22,6 +29,12 @@ public class SettingsMenu : MonoBehaviour
 
     [SerializeField] private bool darkMode;
     public bool DarkMode { get { return darkMode; } }
+
+    [Header("Rounding"), Space(8)]
+    [SerializeField] private RoundingType roundTip;
+    public RoundingType RoundTip => roundTip;
+    [SerializeField] private RoundingType roundTotal;
+    public RoundingType RoundTotal => roundTotal;
 
     [Header("UI Elements"), Space(8)]
     [SerializeField] private UIGradient gradientMenuHeader;
@@ -77,6 +90,24 @@ public class SettingsMenu : MonoBehaviour
 
         UpdateUI();
         TC.UI.UpdateUI();
+    }
+
+    /// <summary>
+    /// Set the Round Tip Setting.
+    /// </summary>
+    /// <param name="value">The Rounding Type in integer form.</param>
+    public void SetRoundTip(int value)
+    {
+        roundTip = (RoundingType)value;
+    }
+
+    /// <summary>
+    /// Set the Round Total Setting.
+    /// </summary>
+    /// <param name="value">The Rounding Type in integer form.</param>
+    public void SetRoundTotal(int value)
+    {
+        roundTotal = (RoundingType)value;
     }
     #endregion
 

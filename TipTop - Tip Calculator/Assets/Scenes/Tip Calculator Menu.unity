@@ -795,7 +795,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 802509089}
   m_HandleRect: {fileID: 802509088}
   m_Direction: 0
-  m_Value: 0.10461566
+  m_Value: 0.9283188
   m_Size: 0.10817308
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -3594,7 +3594,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Round Down
+  m_text: Exact
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eac5c67c463f7f444a4f85ba396494b8, type: 2}
   m_sharedMaterial: {fileID: 4327559145859326424, guid: eac5c67c463f7f444a4f85ba396494b8, type: 2}
@@ -6515,8 +6515,8 @@ RectTransform:
   m_Father: {fileID: 2008703657}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.09329906, y: 0}
-  m_AnchorMax: {x: 0.20147213, y: 1}
+  m_AnchorMin: {x: 0.8278997, y: 0}
+  m_AnchorMax: {x: 0.93607277, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7416,6 +7416,8 @@ MonoBehaviour:
   - {fileID: 1836795021}
   - {fileID: 609879917}
   darkMode: 0
+  roundTip: 0
+  roundTotal: 0
   gradientMenuHeader: {fileID: 328292140}
   gradientBackground: {fileID: 160340400}
   colorThemeHeaderText: {fileID: 253568880}
@@ -9756,7 +9758,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -490.49933, y: 0}
+  m_AnchoredPosition: {x: -2935.2502, y: 0}
   m_SizeDelta: {x: 3328, y: 300}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1274140036
@@ -12301,7 +12303,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Round Down
+  m_text: Exact
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eac5c67c463f7f444a4f85ba396494b8, type: 2}
   m_sharedMaterial: {fileID: 4327559145859326424, guid: eac5c67c463f7f444a4f85ba396494b8, type: 2}
@@ -14597,7 +14599,7 @@ MonoBehaviour:
   m_Placeholder: {fileID: 0}
   m_ItemText: {fileID: 1263113665}
   m_ItemImage: {fileID: 0}
-  m_Value: 2
+  m_Value: 0
   m_Options:
     m_Options:
     - m_Text: Exact
@@ -14608,7 +14610,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 947116345}
+        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
+        m_MethodName: SetRoundTotal
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &1993244758
 MonoBehaviour:
@@ -15303,7 +15317,7 @@ MonoBehaviour:
   m_Placeholder: {fileID: 0}
   m_ItemText: {fileID: 673643772}
   m_ItemImage: {fileID: 0}
-  m_Value: 2
+  m_Value: 0
   m_Options:
     m_Options:
     - m_Text: Exact
@@ -15314,7 +15328,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 947116345}
+        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
+        m_MethodName: SetRoundTip
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &2056770137
 MonoBehaviour:
