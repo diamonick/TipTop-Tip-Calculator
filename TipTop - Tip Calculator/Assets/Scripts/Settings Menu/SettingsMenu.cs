@@ -25,6 +25,7 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] private ColorTheme colorThemePref;
     public ColorTheme ColorThemePref { get { return colorThemePref; } }
     [SerializeField] private ColorThemeSlot[] colorThemeSlots;
+    [SerializeField] private Scrollbar scrollBar;
     private ColorThemeSlot markedColorThemeSlot;
 
     [Header("Dark Mode"), Space(8)]
@@ -53,6 +54,9 @@ public class SettingsMenu : MonoBehaviour
     private void Start()
     {
         TC = TipCalculator.Instance;
+
+        // Set scroll bar's default position to 0.
+        scrollBar.value = 0f;
 
         UpdateUI();
         TC.UI.UpdateUI();
@@ -118,16 +122,16 @@ public class SettingsMenu : MonoBehaviour
         gradientBackground.LinearGradient = darkMode ? colorThemePref.darkBackgroundGradent : colorThemePref.lightBackgroundGradent;
         gradientBackground.Intensity = darkMode ? 1f : 0.5f;
 
-        colorThemeHeaderText.color = colorThemePref.primaryColor;
+        colorThemeHeaderText.color = darkMode ? colorThemePref.tertiaryColor : colorThemePref.primaryColor;
         colorThemeScrollBar.color = colorThemePref.primaryColor;
         colorThemeScrollBarBkg.color = darkMode ? colorThemePref.darkColor : colorThemePref.tertiaryColor;
 
         darkModeToggleButton.UpdateUI();
 
-        darkModeText.color = colorThemePref.primaryColor;
-        roundTipText.color = colorThemePref.primaryColor;
+        darkModeText.color = darkMode ? colorThemePref.tertiaryColor : colorThemePref.primaryColor;
+        roundTipText.color = darkMode ? colorThemePref.tertiaryColor : colorThemePref.primaryColor;
         roundTipDropdownMenu.SetDropdownColors();
-        roundTotalText.color = colorThemePref.primaryColor;
+        roundTotalText.color = darkMode ? colorThemePref.tertiaryColor : colorThemePref.primaryColor;
         roundTotalDropdownMenu.SetDropdownColors();
 
         foreach (ColorThemeSlot slot in colorThemeSlots)

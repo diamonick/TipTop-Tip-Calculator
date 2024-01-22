@@ -21,6 +21,7 @@ public class DropdownMenu : MonoBehaviour
     [SerializeField] private DropdownMenuItem item;
 
     private Color lightColor;
+    private Color primaryColor;
     private Color pressedColor;
     private Color releasedColor;
 
@@ -40,7 +41,8 @@ public class DropdownMenu : MonoBehaviour
         bool darkMode = TC.Settings.DarkMode;
 
         lightColor = colorTheme.lightColor;
-        pressedColor = colorTheme.primaryColor;
+        primaryColor = colorTheme.primaryColor;
+        pressedColor = darkMode ? colorTheme.tertiaryColor : colorTheme.primaryColor;
         releasedColor = darkMode ? colorTheme.darkColor : colorTheme.lightColor;
 
         // Get dropdown's colors (Normal, Highlighted, Pressed, and Selected).
@@ -61,7 +63,10 @@ public class DropdownMenu : MonoBehaviour
         SetLabelColor(pressedColor);
 
         // Set dropdown arrow color.
-        SetArrowColor(pressedColor);
+        SetArrowColor(primaryColor);
+
+        // Set dropdown item's colors.
+        item.SetItemColors();
 
         // Set dropdown list's background color.
         dropdownListBkg.color = releasedColor;
@@ -83,7 +88,7 @@ public class DropdownMenu : MonoBehaviour
     public void OnDropdownReleased()
     {
         SetLabelColor(pressedColor);
-        SetArrowColor(pressedColor);
+        SetArrowColor(primaryColor);
     }
     #endregion
 

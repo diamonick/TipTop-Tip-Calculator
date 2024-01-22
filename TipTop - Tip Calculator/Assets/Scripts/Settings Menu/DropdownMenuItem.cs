@@ -16,6 +16,7 @@ public class DropdownMenuItem : MonoBehaviour
     [SerializeField] private TMP_Text itemLabel;
 
     private Color lightColor;
+    private Color primaryColor;
     private Color pressedColor;
     private Color releasedColor;
 
@@ -35,7 +36,8 @@ public class DropdownMenuItem : MonoBehaviour
         bool darkMode = TC.Settings.DarkMode;
 
         lightColor = colorTheme.lightColor;
-        pressedColor = colorTheme.primaryColor;
+        primaryColor = colorTheme.primaryColor;
+        pressedColor = darkMode ? colorTheme.tertiaryColor : colorTheme.primaryColor;
         releasedColor = darkMode ? colorTheme.darkColor : colorTheme.lightColor;
 
         // Get dropdown item's colors (Normal, Highlighted, Pressed, and Selected).
@@ -43,7 +45,7 @@ public class DropdownMenuItem : MonoBehaviour
         itemColors.normalColor = releasedColor;
         itemColors.highlightedColor = releasedColor;
         itemColors.pressedColor = colorTheme.primaryColor;
-        itemColors.selectedColor = colorTheme.tertiaryColor;
+        itemColors.selectedColor = releasedColor;
 
         // Reassign dropdown item's colors.
         itemToggle.colors = itemColors;
@@ -51,7 +53,7 @@ public class DropdownMenuItem : MonoBehaviour
         // Set dropdown item's label color.
         SetLabelColor(pressedColor);
         // Set dropdown item's checkmark color.
-        SetCheckmarkColor(pressedColor);
+        SetCheckmarkColor(primaryColor);
     }
 
     #region Event Trigger Method(s)
@@ -60,6 +62,7 @@ public class DropdownMenuItem : MonoBehaviour
     /// </summary>
     public void OnItemPressed()
     {
+        itemToggle.image.color = lightColor;
         SetLabelColor(lightColor);
         SetCheckmarkColor(lightColor);
     }
@@ -70,7 +73,7 @@ public class DropdownMenuItem : MonoBehaviour
     public void OnItemReleased()
     {
         SetLabelColor(pressedColor);
-        SetCheckmarkColor(pressedColor);
+        SetCheckmarkColor(primaryColor);
     }
     #endregion
 

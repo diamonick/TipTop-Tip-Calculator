@@ -40,7 +40,7 @@ public class PadButton : MonoBehaviour
         bool darkMode = TC.Settings.DarkMode;
 
         lightColor = colorTheme.lightColor;
-        pressedColor = colorTheme.primaryColor;
+        pressedColor = darkMode ? colorTheme.tertiaryColor : colorTheme.primaryColor;
         releasedColor = darkMode ? colorTheme.darkColor : colorTheme.lightColor;
 
         // Get button's colors (Normal, Highlighted, Pressed, and Selected).
@@ -62,6 +62,7 @@ public class PadButton : MonoBehaviour
         SetIconColor(pressedColor);
     }
 
+    #region Event Trigger Method(s)
     /// <summary>
     /// Call this method when the button is pressed.
     /// </summary>
@@ -79,7 +80,9 @@ public class PadButton : MonoBehaviour
         SetTextColor(pressedColor);
         SetIconColor(pressedColor);
     }
+    #endregion
 
+    #region Set Color Method(s)
     /// <summary>
     /// Set button text color.
     /// </summary>
@@ -103,4 +106,5 @@ public class PadButton : MonoBehaviour
             icon.color = color;
         }
     }
+    #endregion
 }

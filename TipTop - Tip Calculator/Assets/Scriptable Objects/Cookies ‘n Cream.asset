@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainGradent:
     serializedVersion: 2
-    key0: {r: 0.13333334, g: 0.13333334, b: 0.13333334, a: 1}
-    key1: {r: 0.44313726, g: 0.37254903, b: 0.3372549, a: 1}
+    key0: {r: 0.25, g: 0.24166667, b: 0.2375, a: 1}
+    key1: {r: 0.64, g: 0.5380531, b: 0.48707965, a: 1}
     key2: {r: 0, g: 0.81960785, b: 1, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -99,8 +99,8 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  primaryColor: {r: 0.44313726, g: 0.37254903, b: 0.3372549, a: 1}
-  secondaryColor: {r: 0.13333334, g: 0.13333334, b: 0.13333334, a: 1}
+  primaryColor: {r: 0.6392157, g: 0.5372549, b: 0.4862745, a: 1}
+  secondaryColor: {r: 0.2509804, g: 0.24313726, b: 0.23921569, a: 1}
   tertiaryColor: {r: 0.82745105, g: 0.7725491, b: 0.6862745, a: 1}
   lightColor: {r: 1, g: 1, b: 1, a: 1}
-  darkColor: {r: 0.184, g: 0.15469027, b: 0.1400354, a: 1}
+  darkColor: {r: 0.17, g: 0.13868421, b: 0.12526315, a: 1}

@@ -61,10 +61,10 @@ public class TipCalculatorUI : MonoBehaviour
         ColorTheme colorTheme = TC.Settings.ColorThemePref;
         bool darkMode = TC.Settings.DarkMode;
 
-        tipPercentageHeader.color = colorTheme.primaryColor;
-        tipPercentageText.color = colorTheme.primaryColor;
-        splitHeader.color = colorTheme.primaryColor;
-        splitText.color = colorTheme.primaryColor;
+        tipPercentageHeader.color = darkMode ? colorTheme.tertiaryColor : colorTheme.primaryColor;
+        tipPercentageText.color = darkMode ? colorTheme.tertiaryColor : colorTheme.primaryColor;
+        splitHeader.color = darkMode ? colorTheme.tertiaryColor : colorTheme.primaryColor;
+        splitText.color = darkMode ? colorTheme.tertiaryColor : colorTheme.primaryColor;
 
         gradienBillAmountBox.LinearGradient = colorTheme.mainGradent;
 
