@@ -20,13 +20,14 @@ public class SettingsMenu : MonoBehaviour
     [Header("Settings Menu")]
     [SerializeField] private Animator animator;
     [SerializeField] private GraphicRaycaster graphicRaycaster;
+    [SerializeField] private bool deletePreferences;
 
     [Header("Color Theme"), Space(8)]
     [SerializeField] private ColorTheme colorThemePref;
     public ColorTheme ColorThemePref { get { return colorThemePref; } }
-    [SerializeField] private ColorThemeSlot[] colorThemeSlots;
+    [SerializeField] private List<ColorThemeSlot> colorThemeSlots;
     [SerializeField] private Scrollbar scrollBar;
-    private ColorThemeSlot markedColorThemeSlot;
+    [SerializeField] private ColorThemeSlot markedColorThemeSlot;
 
     [Header("Dark Mode"), Space(8)]
     [SerializeField] private bool darkMode;
@@ -58,64 +59,18 @@ public class SettingsMenu : MonoBehaviour
         // Set scroll bar's default position to 0.
         scrollBar.value = 0f;
 
-        UpdateUI();
-        TC.UI.UpdateUI();
-    }
-
-    #region Settings Method(s)
-    /// <summary>
-    /// Set user's color theme.
-    /// </summary>
-    /// <param name="colorTheme">New color theme.</param>
-    public void SetColorTheme(ColorThemeSlot slot)
-    {
-        markedColorThemeSlot = slot;
-
-        for (int i = 0; i < colorThemeSlots.Length; i++)
+        if (deletePreferences)
         {
-            if (colorThemeSlots[i] == markedColorThemeSlot)
-            {
-                colorThemePref = slot.ColorTheme;
-
-                UpdateUI();
-                TC.UI.UpdateUI();
-            }
-            else
-            {
-                colorThemeSlots[i].Uncheck();
-            }
+            UserPrefs.DeleteUserPreferences();
         }
+
+        // Load settings.
+        LoadSettings();
     }
 
     /// <summary>
-    /// Toggle the Dark Mode setting and update the UI's color theme accordingly.
+    /// Update the UI elements in the Settings Menu.
     /// </summary>
-    public void ToggleDarkMode()
-    {
-        darkModeToggleButton.Toggle(ref darkMode);
-        UpdateUI();
-        TC.UI.UpdateUI();
-    }
-
-    /// <summary>
-    /// Set the Round Tip Setting.
-    /// </summary>
-    /// <param name="value">The Rounding Type in integer form.</param>
-    public void SetRoundTip(int value)
-    {
-        roundTip = (RoundingType)value;
-    }
-
-    /// <summary>
-    /// Set the Round Total Setting.
-    /// </summary>
-    /// <param name="value">The Rounding Type in integer form.</param>
-    public void SetRoundTotal(int value)
-    {
-        roundTotal = (RoundingType)value;
-    }
-    #endregion
-
     public void UpdateUI()
     {
         gradientMenuHeader.LinearGradient = colorThemePref.mainGradent;
@@ -140,6 +95,117 @@ public class SettingsMenu : MonoBehaviour
         }
     }
 
+    #region Save/Load Settings Method(s)
+    /// <summary>
+    /// Save user's preferred Color Theme.
+    /// </summary>
+    public void SaveColorTheme() => UserPrefs.SaveColorThemeID(markedColorThemeSlot.ID);
+
+    /// <summary>
+    /// Save user's preferred Dark Mode setting.
+    /// </summary>
+    public void SaveDarkMode() => UserPrefs.SaveDarkModeID(darkMode);
+
+    /// <summary>
+    /// Save user's preferred rounding type for Round Tip.
+    /// </summary>
+    public void SaveRoundTip() => UserPrefs.SaveRoundTipID((int)roundTip);
+
+    /// <summary>
+    /// Save user's preferred rounding type for Round Total.
+    /// </summary>
+    public void SaveRoundTotal() => UserPrefs.SaveRoundTotalID((int)roundTotal);
+
+    /// <summary>
+    /// Load user's preferences in the Settings menu.
+    /// </summary>
+    private void LoadSettings()
+    {
+        darkMode = UserPrefs.LoadDarkModeID();
+        SetRoundTip(UserPrefs.LoadRoundTipID());
+        SetRoundTotal(UserPrefs.LoadRoundTotalID());
+
+        markedColorThemeSlot = colorThemeSlots[UserPrefs.LoadColorThemeID()];
+        if (markedColorThemeSlot != null)
+        {
+            markedColorThemeSlot.Check();
+        }
+
+        UpdateUI();
+        TC.UI.UpdateUI();
+    }
+    #endregion
+
+    #region Settings Method(s)
+    /// <summary>
+    /// Set user's color theme.
+    /// </summary>
+    /// <param name="colorTheme">New color theme.</param>
+    public void SetColorTheme(ColorThemeSlot slot)
+    {
+        markedColorThemeSlot = slot;
+
+        for (int i = 0; i < colorThemeSlots.Count; i++)
+        {
+            if (colorThemeSlots[i] == markedColorThemeSlot)
+            {
+                colorThemePref = slot.ColorTheme;
+
+                UpdateUI();
+                TC.UI.UpdateUI();
+            }
+            else
+            {
+                colorThemeSlots[i].Uncheck();
+            }
+        }
+
+        SaveColorTheme();
+    }
+
+    /// <summary>
+    /// Toggle the Dark Mode setting and update the UI's color theme accordingly.
+    /// </summary>
+    public void ToggleDarkMode()
+    {
+        darkModeToggleButton.Toggle(ref darkMode);
+        UpdateUI();
+        TC.UI.UpdateUI();
+
+        SaveDarkMode();
+    }
+
+    /// <summary>
+    /// Set the Round Tip Setting.
+    /// </summary>
+    /// <param name="value">The Rounding Type in integer form.</param>
+    public void SetRoundTip(int value)
+    {
+        if (value == (int)roundTip)
+            return;
+
+        roundTip = (RoundingType)value;
+        roundTipDropdownMenu.SetValue(value);
+
+        SaveRoundTip();
+    }
+
+    /// <summary>
+    /// Set the Round Total Setting.
+    /// </summary>
+    /// <param name="value">The Rounding Type in integer form.</param>
+    public void SetRoundTotal(int value)
+    {
+        if (value == (int)roundTotal)
+            return;
+
+        roundTotal = (RoundingType)value;
+        roundTotalDropdownMenu.SetValue(value);
+
+        SaveRoundTotal();
+    }
+    #endregion
+
     #region Show/Hide Menu Method(s)
     /// <summary>
     /// Show the Settings Menu.
@@ -148,6 +214,7 @@ public class SettingsMenu : MonoBehaviour
     {
         Activate();
         animator.SetBool("Show Menu?", true);
+        UpdateUI();
     }
 
     /// <summary>

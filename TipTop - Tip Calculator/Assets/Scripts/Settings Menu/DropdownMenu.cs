@@ -72,6 +72,11 @@ public class DropdownMenu : MonoBehaviour
         dropdownListBkg.color = releasedColor;
     }
 
+    public void SetValue(int value)
+    {
+        dropdown.value = value;
+    }
+
     #region Event Trigger Method(s)
     /// <summary>
     /// Call this method when the dropdown is pressed.

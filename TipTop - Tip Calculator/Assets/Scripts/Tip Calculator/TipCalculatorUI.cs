@@ -83,6 +83,7 @@ public class TipCalculatorUI : MonoBehaviour
         numberPad.UpdateButtonColors();
     }
 
+    #region Set Text Method(s)
     /// <summary>
     /// Set text for Bill Amount. [Range: $0.00 - $9999.99]
     /// </summary>
@@ -161,4 +162,5 @@ public class TipCalculatorUI : MonoBehaviour
 
         return $"<size={mainFontSize}>${dollarAmount}</size><size={mainFontSize / 2}>{centsAmount}</size>";
     }
+    #endregion
 }

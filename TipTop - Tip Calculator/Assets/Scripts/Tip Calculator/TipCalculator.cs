@@ -43,8 +43,8 @@ public class TipCalculator : MonoBehaviour
             Debug.LogWarning($"WARNING: There can only be one TipCalculator instance.");
         }
 
-        // Allow app to accept multiple touch inputs from the user.
-        Input.multiTouchEnabled = true;
+        // Allow app to ignore multiple touch inputs from the user.
+        Input.multiTouchEnabled = false;
     }
 
     private void Start()
