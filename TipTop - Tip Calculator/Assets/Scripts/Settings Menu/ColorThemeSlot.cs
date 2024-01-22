@@ -19,6 +19,7 @@ public class ColorThemeSlot : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     [SerializeField] private GameObject checkmark;
     [SerializeField] private Image blurShadow;
     [SerializeField] private Animator animator;
+    [SerializeField] public RectTransform slotRect;
     public ColorTheme ColorTheme => colorTheme;
     [SerializeField] private bool isChecked;
 

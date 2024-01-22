@@ -26,8 +26,10 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] private ColorTheme colorThemePref;
     public ColorTheme ColorThemePref { get { return colorThemePref; } }
     [SerializeField] private List<ColorThemeSlot> colorThemeSlots;
-    [SerializeField] private Scrollbar scrollBar;
     [SerializeField] private ColorThemeSlot markedColorThemeSlot;
+    [SerializeField] private Scrollbar scrollBar;
+    [SerializeField] private ScrollRect scrollRect;
+    [SerializeField] private RectTransform contentPanel;
 
     [Header("Dark Mode"), Space(8)]
     [SerializeField] private bool darkMode;
@@ -215,6 +217,9 @@ public class SettingsMenu : MonoBehaviour
         Activate();
         animator.SetBool("Show Menu?", true);
         UpdateUI();
+
+        // Snap the scroll view's position to the user's preferred color theme.
+        SnapTo(markedColorThemeSlot.slotRect);
     }
 
     /// <summary>
@@ -224,6 +229,21 @@ public class SettingsMenu : MonoBehaviour
     {
         DisableRaycast();
         animator.SetBool("Show Menu?", false);
+    }
+
+    /// <summary>
+    /// Snap the scroll view's position to the user's preferred color theme.
+    /// </summary>
+    /// <param name="target">Target.</param>
+    private void SnapTo(RectTransform target)
+    {
+        Canvas.ForceUpdateCanvases();
+
+        Vector2 localContentPos = (Vector2)scrollRect.transform.InverseTransformPoint(contentPanel.position);
+        Vector2 localTargetPos = (Vector2)scrollRect.transform.InverseTransformPoint(target.position);
+
+        contentPanel.anchoredPosition = localContentPos - localTargetPos;
+        contentPanel.anchoredPosition *= Vector2.right;
     }
 
     /// <summary>
