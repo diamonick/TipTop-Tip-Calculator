@@ -15,7 +15,7 @@ public class PadButton : MonoBehaviour
     [SerializeField] protected Button button;
     [SerializeField] protected TMP_Text buttonText;
     [SerializeField] protected Image icon;
-    [SerializeField] protected Shadow dropShadow;
+    [SerializeField] protected Image blurShadow;
 
     protected Color lightColor;
     protected Color pressedColor;
@@ -24,6 +24,7 @@ public class PadButton : MonoBehaviour
     protected virtual void Start()
     {
         TC = TipCalculator.Instance;
+        StartCoroutine(SetFadeDuration(0.1f));
     }
 
     /// <summary>
@@ -52,14 +53,23 @@ public class PadButton : MonoBehaviour
 
         // Reassign button's colors.
         button.colors = buttonColors;
-        dropShadow.effectColor = darkMode ? colorTheme.darkColor : colorTheme.primaryColor;
-        dropShadow.effectColor *= new Color(1f, 1f, 1f, 0.25f);
+        blurShadow.color = darkMode ? colorTheme.darkColor : colorTheme.primaryColor;
+        blurShadow.color *= new Color(1f, 1f, 1f, 0.25f);
 
         // Set button text color.
         SetTextColor(pressedColor);
 
         // Set icon color.
         SetIconColor(pressedColor);
+    }
+
+    private IEnumerator SetFadeDuration(float duration)
+    {
+        yield return null;
+
+        ColorBlock cb = button.colors;
+        cb.fadeDuration = duration;
+        button.colors = cb;
     }
 
     #region Event Trigger Method(s)
