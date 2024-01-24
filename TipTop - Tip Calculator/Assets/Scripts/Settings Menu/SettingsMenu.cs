@@ -19,7 +19,7 @@ public class SettingsMenu : MonoBehaviour
 
     [Header("Settings Menu")]
     [SerializeField] private Animator animator;
-    [SerializeField] private GraphicRaycaster graphicRaycaster;
+    public GraphicRaycaster settingsRaycast;
     [SerializeField] private bool deletePreferences;
 
     [Header("Color Theme"), Space(8)]
@@ -214,7 +214,9 @@ public class SettingsMenu : MonoBehaviour
     /// </summary>
     public void ShowSettingsMenu()
     {
-        Activate();
+        // Disable main menu's graphic raycaster.
+        TC.UI.DisableRaycast();
+
         animator.SetBool("Show Menu?", true);
         UpdateUI();
 
@@ -246,12 +248,13 @@ public class SettingsMenu : MonoBehaviour
         contentPanel.anchoredPosition *= Vector2.right;
     }
 
+    #region Raycast Method(s)
     /// <summary>
     /// Enable Graphic Raycaster component.
     /// </summary>
     public void EnableRaycast()
     {
-        graphicRaycaster.enabled = true;
+        settingsRaycast.enabled = true;
     }
 
     /// <summary>
@@ -259,23 +262,16 @@ public class SettingsMenu : MonoBehaviour
     /// </summary>
     public void DisableRaycast()
     {
-        graphicRaycaster.enabled = false;
+        settingsRaycast.enabled = false;
     }
 
     /// <summary>
-    /// Activate this menu.
+    /// Enable Main Menu's Graphic Raycaster component.
     /// </summary>
-    public void Activate()
+    public void EnableMainRaycast()
     {
-        gameObject.SetActive(true);
+        TC.UI.EnableRaycast();
     }
-
-    /// <summary>
-    /// Deactivate this menu.
-    /// </summary>
-    public void Deactivate()
-    {
-        gameObject.SetActive(false);
-    }
+    #endregion
     #endregion
 }

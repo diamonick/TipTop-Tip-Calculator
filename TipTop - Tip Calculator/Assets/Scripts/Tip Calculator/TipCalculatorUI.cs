@@ -15,7 +15,10 @@ public class TipCalculatorUI : MonoBehaviour
     private const int BILL_AMOUNT_TEXT_SIZE = 200;
     private const int VALUE_TEXT_SIZE = 108;
 
-    [Header("UI Text")]
+    [Header("UI")]
+    [SerializeField] private GraphicRaycaster mainRaycast;
+
+    [Header("UI Text"), Space(8)]
     [SerializeField] private TMP_Text billAmountText;
     [SerializeField] private TMP_Text tipPercentageHeader;
     [SerializeField] private TMP_Text tipPercentageText;
@@ -161,6 +164,24 @@ public class TipCalculatorUI : MonoBehaviour
         string centsAmount = fullAmount.GetLast(3);
 
         return $"<size={mainFontSize}>${dollarAmount}</size><size={mainFontSize / 2}>{centsAmount}</size>";
+    }
+    #endregion
+
+    #region Raycast Method(s)
+    /// <summary>
+    /// Enable Graphic Raycaster component.
+    /// </summary>
+    public void EnableRaycast()
+    {
+        mainRaycast.enabled = true;
+    }
+
+    /// <summary>
+    /// Disable Graphic Raycaster component.
+    /// </summary>
+    public void DisableRaycast()
+    {
+        mainRaycast.enabled = false;
     }
     #endregion
 }
