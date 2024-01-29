@@ -4649,6 +4649,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 519420032}
+  - component: {fileID: 519420033}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
@@ -4740,6 +4741,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e63d63e2f2cf5dd4192c995df121bf8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: 0
+  enableScreenshot: 1
 --- !u!1 &523908994
 GameObject:
   m_ObjectHideFlags: 0
@@ -8130,7 +8145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 947116344}
   settingsRaycast: {fileID: 947116342}
-  deletePreferences: 0
+  deletePreferences: 1
   colorThemePref: {fileID: 11400000, guid: 0d1f00ed79eb88045a24bf7f4b949363, type: 2}
   colorThemeSlots:
   - {fileID: 226412964}
@@ -16696,7 +16711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
+  m_SubmitButton: Jump
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
