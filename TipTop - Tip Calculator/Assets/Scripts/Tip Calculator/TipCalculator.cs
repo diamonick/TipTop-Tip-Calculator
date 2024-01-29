@@ -43,6 +43,9 @@ public class TipCalculator : MonoBehaviour
             Debug.LogWarning($"WARNING: There can only be one TipCalculator instance.");
         }
 
+        // Set the target framerate to 60 FPS.
+        Application.targetFrameRate = 60;
+
         // Allow app to ignore multiple touch inputs from the user.
         Input.multiTouchEnabled = false;
     }
@@ -52,10 +55,7 @@ public class TipCalculator : MonoBehaviour
         UI.SetBillAmountText(billAmount);
         UI.SetTipPercentageText(tipPercentage);
         UI.SetSplitText(split);
-    }
 
-    private void Update()
-    {
         PerformTipCalculations();
     }
 
@@ -75,18 +75,21 @@ public class TipCalculator : MonoBehaviour
     {
         billAmount = amount;
         UI.SetBillAmountText(billAmount);
+        PerformTipCalculations();
     }
 
     public void SetTipPercentage()
     {
         tipPercentage = (int)UI.tipPercentageSlider.value;
         UI.SetTipPercentageText(tipPercentage);
+        PerformTipCalculations();
     }
 
     public void SetSplit()
     {
         split = (int)UI.splitSlider.value;
         UI.SetSplitText(split);
+        PerformTipCalculations();
     }
 
     /// <summary>

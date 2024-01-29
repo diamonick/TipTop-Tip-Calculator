@@ -4168,6 +4168,7 @@ GameObject:
   - component: {fileID: 448411783}
   - component: {fileID: 448411782}
   - component: {fileID: 448411781}
+  - component: {fileID: 448411784}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -4246,6 +4247,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 448411779}
   m_CullTransparentMesh: 1
+--- !u!223 &448411784
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448411779}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 1
+  m_TargetDisplay: 0
 --- !u!1 &484657359
 GameObject:
   m_ObjectHideFlags: 0
@@ -10270,6 +10292,7 @@ GameObject:
   - component: {fileID: 1224482873}
   - component: {fileID: 1224482872}
   - component: {fileID: 1224482874}
+  - component: {fileID: 1224482875}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -10348,6 +10371,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 1
+--- !u!223 &1224482875
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224482870}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 1
+  m_TargetDisplay: 0
 --- !u!1001 &1227282352
 PrefabInstance:
   m_ObjectHideFlags: 0

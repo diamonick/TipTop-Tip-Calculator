@@ -15,15 +15,15 @@ C:/Users/diamo/OneDrive/Documents/GitHub/TipTop-Tip-Calculator/TipTop - Tip Calc
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-54431
+55522
 Successfully changed project path to: C:/Users/diamo/OneDrive/Documents/GitHub/TipTop-Tip-Calculator/TipTop - Tip Calculator
 C:/Users/diamo/OneDrive/Documents/GitHub/TipTop-Tip-Calculator/TipTop - Tip Calculator
 Using Asset Import Pipeline V2.
-Player connection [27968] Host "[IP] 10.0.0.27 [Port] 1073957024 [Flags] 2 [Guid] 2160430177 [EditorId] 2160430177 [Version] 1048832 [Id] WindowsEditor(7,DiamonickPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [25000] Host "[IP] 10.0.0.27 [Port] 805521568 [Flags] 2 [Guid] 2073716178 [EditorId] 2073716178 [Version] 1048832 [Id] WindowsEditor(7,DiamonickPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [27968] Host "[IP] 10.0.0.27 [Port] 1073957024 [Flags] 2 [Guid] 2160430177 [EditorId] 2160430177 [Version] 1048832 [Id] WindowsEditor(7,DiamonickPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [25000] Host "[IP] 10.0.0.27 [Port] 805521568 [Flags] 2 [Guid] 2073716178 [EditorId] 2073716178 [Version] 1048832 [Id] WindowsEditor(7,DiamonickPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 37.30 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 44.94 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.44f1 (7f159b6136da)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.44f1/Editor/Data/Resources/UnitySubsystems
@@ -39,37 +39,37 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.44f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.44f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.44f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56052
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56600
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.44f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001253 seconds.
+Registered in 0.001226 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 38.62 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 37.32 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.423 seconds
+- Completed reload, in  0.418 seconds
 Domain Reload Profiling:
-	ReloadAssembly (423ms)
-		BeginReloadAssembly (45ms)
+	ReloadAssembly (418ms)
+		BeginReloadAssembly (43ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (328ms)
-			LoadAssemblies (44ms)
+		EndReloadAssembly (327ms)
+			LoadAssemblies (41ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (99ms)
+			SetupTypeCache (97ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (21ms)
-			SetupLoadedEditorAssemblies (133ms)
+			RebuildScriptCaches (22ms)
+			SetupLoadedEditorAssemblies (136ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (39ms)
+				RefreshPlugins (37ms)
 				BeforeProcessingInitializeOnLoad (13ms)
-				ProcessInitializeOnLoadAttributes (57ms)
+				ProcessInitializeOnLoadAttributes (61ms)
 				ProcessInitializeOnLoadMethodAttributes (21ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
@@ -77,35 +77,35 @@ Domain Reload Profiling:
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.002732 seconds.
+Registered in 0.002624 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 36.02 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 35.21 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.904 seconds
+- Completed reload, in  0.884 seconds
 Domain Reload Profiling:
-	ReloadAssembly (904ms)
-		BeginReloadAssembly (99ms)
+	ReloadAssembly (885ms)
+		BeginReloadAssembly (98ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
+			DisableScriptedObjects (3ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (16ms)
-		EndReloadAssembly (761ms)
-			LoadAssemblies (70ms)
+			CreateAndSetChildDomain (15ms)
+		EndReloadAssembly (743ms)
+			LoadAssemblies (68ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (200ms)
+			SetupTypeCache (197ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (34ms)
-			SetupLoadedEditorAssemblies (385ms)
+			RebuildScriptCaches (33ms)
+			SetupLoadedEditorAssemblies (374ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (2ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (36ms)
-				BeforeProcessingInitializeOnLoad (60ms)
-				ProcessInitializeOnLoadAttributes (269ms)
-				ProcessInitializeOnLoadMethodAttributes (14ms)
+				RefreshPlugins (35ms)
+				BeforeProcessingInitializeOnLoad (59ms)
+				ProcessInitializeOnLoadAttributes (256ms)
+				ProcessInitializeOnLoadMethodAttributes (17ms)
 				AfterProcessingInitializeOnLoad (4ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -121,7 +121,7 @@ System memory in use before: 101.9 MB.
 System memory in use after: 101.8 MB.
 
 Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 2698.
-Total: 3.094800 ms (FindLiveObjects: 0.124400 ms CreateObjectMapping: 0.032800 ms MarkObjects: 2.767900 ms  DeleteObjects: 0.168800 ms)
+Total: 2.856000 ms (FindLiveObjects: 0.123900 ms CreateObjectMapping: 0.032000 ms MarkObjects: 2.532800 ms  DeleteObjects: 0.166600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -136,25 +136,43 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Art/TipTop App Icon (512x512).png
-  artifactKey: Guid(664092c572bfece41a94af452743afb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/TipTop App Icon (512x512).png using Guid(664092c572bfece41a94af452743afb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47c150908cc372d69b5cc5e7ed008c31') in 0.098687 seconds 
+  path: Assets/Art/Splash Screen/TipTop Logo.png
+  artifactKey: Guid(23c5d594a0c1b784a94ba39da79e7bdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Splash Screen/TipTop Logo.png using Guid(23c5d594a0c1b784a94ba39da79e7bdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ffad80fd9ca60e3ab6de1147a09645b') in 0.069047 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 5.517011 seconds.
-  path: Assets/Art/TipTop App Icon.png
-  artifactKey: Guid(667f1b09cac4aa345890e9cec5fcf5ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/TipTop App Icon.png using Guid(667f1b09cac4aa345890e9cec5fcf5ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33199c4f1aef67a6ef030c54a57620c4') in 0.014653 seconds 
+  Time since last request: 0.000345 seconds.
+  path: Assets/Art/Splash Screen/TipTop Title Logo.png
+  artifactKey: Guid(a1676c3342b94614eb686f0ddcae6438) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Splash Screen/TipTop Title Logo.png using Guid(a1676c3342b94614eb686f0ddcae6438) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae52f8e65e332c6fb178f417d3812285') in 0.007789 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 9.458975 seconds.
-  path: Assets/Art/TipTop App Icon (1024x1024).png
-  artifactKey: Guid(667f1b09cac4aa345890e9cec5fcf5ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/TipTop App Icon (1024x1024).png using Guid(667f1b09cac4aa345890e9cec5fcf5ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9920a0bf75a8ce367879d745957be767') in 0.015766 seconds 
+  Time since last request: 0.000255 seconds.
+  path: Assets/Art/Splash Screen/TipTop Splash Logo.png
+  artifactKey: Guid(0ae0323d2ac7ee749ad3e4505e2a9b26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Splash Screen/TipTop Splash Logo.png using Guid(0ae0323d2ac7ee749ad3e4505e2a9b26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef1a1394e39552760b142864efd01502') in 0.007405 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.510363 seconds.
-  path: Assets/Art/TipTop App Icon (1024x1024).png
-  artifactKey: Guid(667f1b09cac4aa345890e9cec5fcf5ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/TipTop App Icon (1024x1024).png using Guid(667f1b09cac4aa345890e9cec5fcf5ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc59b63ef07c3e5d7966e91a4b9349ef') in 0.024238 seconds 
+  Time since last request: 215.677699 seconds.
+  path: Assets/Art/Splash Screen/My Logo.png
+  artifactKey: Guid(d14c3efe82100db4686b33af57135641) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Splash Screen/My Logo.png using Guid(d14c3efe82100db4686b33af57135641) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20bf96a0a936f95e43f6c8cb3fec9b14') in 0.011954 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15.469675 seconds.
+  path: Assets/Art/Splash Screen/My Logo.png
+  artifactKey: Guid(d14c3efe82100db4686b33af57135641) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Splash Screen/My Logo.png using Guid(d14c3efe82100db4686b33af57135641) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53aa9711bd55dd13965d0aa5727e63e1') in 0.013010 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 50.471937 seconds.
+  path: Assets/Art/Splash Screen/My Logo.png
+  artifactKey: Guid(d14c3efe82100db4686b33af57135641) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Splash Screen/My Logo.png using Guid(d14c3efe82100db4686b33af57135641) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27e80993371d98bf13db642053a18ae5') in 0.012837 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.184504 seconds.
+  path: Assets/Art/Splash Screen/My Logo.png
+  artifactKey: Guid(d14c3efe82100db4686b33af57135641) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Splash Screen/My Logo.png using Guid(d14c3efe82100db4686b33af57135641) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69b91828fc6f842649317b305382068f') in 0.026065 seconds 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

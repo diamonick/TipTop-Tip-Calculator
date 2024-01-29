@@ -13,7 +13,7 @@ public class TipCalculatorUI : MonoBehaviour
 
     // Constants
     private const int BILL_AMOUNT_TEXT_SIZE = 200;
-    private const int VALUE_TEXT_SIZE = 108;
+    private const int VALUE_TEXT_SIZE = 120;
 
     [Header("UI")]
     [SerializeField] private GraphicRaycaster mainRaycast;
