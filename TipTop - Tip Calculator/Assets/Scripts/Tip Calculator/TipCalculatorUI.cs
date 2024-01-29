@@ -73,10 +73,12 @@ public class TipCalculatorUI : MonoBehaviour
 
         tipPercentageSliderBkg.color = darkMode ? colorTheme.darkColor : colorTheme.tertiaryColor;
         tipPercentageSliderBlurShadow.color = colorTheme.primaryColor;
+        tipPercentageSliderBlurShadow.color *= new Color(1f, 1f, 1f, 0.25f);
         tipPercentageSliderOutline.color = colorTheme.secondaryColor;
         gradientTipPercentageFill.LinearGradient = colorTheme.mainGradent;
         splitSliderBkg.color = darkMode ? colorTheme.darkColor : colorTheme.tertiaryColor;
         splitSliderBlurShadow.color = colorTheme.primaryColor;
+        splitSliderBlurShadow.color *= new Color(1f, 1f, 1f, 0.25f);
         splitSliderOutline.color = colorTheme.secondaryColor;
         gradientSplitFill.LinearGradient = colorTheme.mainGradent;
 
