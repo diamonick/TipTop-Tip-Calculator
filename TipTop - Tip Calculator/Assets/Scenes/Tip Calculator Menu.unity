@@ -4754,7 +4754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
-  enableScreenshot: 1
+  enableScreenshot: 0
 --- !u!1 &523908994
 GameObject:
   m_ObjectHideFlags: 0
@@ -8145,7 +8145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 947116344}
   settingsRaycast: {fileID: 947116342}
-  deletePreferences: 1
+  deletePreferences: 0
   colorThemePref: {fileID: 11400000, guid: 0d1f00ed79eb88045a24bf7f4b949363, type: 2}
   colorThemeSlots:
   - {fileID: 226412964}

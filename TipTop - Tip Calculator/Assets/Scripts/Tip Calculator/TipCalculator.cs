@@ -97,6 +97,8 @@ public class TipCalculator : MonoBehaviour
     /// </summary>
     public void CalculateTotalBillAmount()
     {
+        CalculateTotalTipAmount();
+
         // Total Bill Amount = Bill Amount + Total Tip Amount
         float result = billAmount + totalTipAmount;
 

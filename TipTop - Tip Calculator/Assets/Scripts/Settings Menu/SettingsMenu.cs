@@ -190,6 +190,7 @@ public class SettingsMenu : MonoBehaviour
         roundTipDropdownMenu.SetValue(value);
 
         SaveRoundTip();
+        TC.PerformTipCalculations();
     }
 
     /// <summary>
@@ -205,6 +206,7 @@ public class SettingsMenu : MonoBehaviour
         roundTotalDropdownMenu.SetValue(value);
 
         SaveRoundTotal();
+        TC.PerformTipCalculations();
     }
     #endregion
 
