@@ -876,6 +876,8 @@ GameObject:
   - component: {fileID: 134193364}
   - component: {fileID: 134193359}
   - component: {fileID: 134193363}
+  - component: {fileID: 134193361}
+  - component: {fileID: 134193362}
   m_Layer: 5
   m_Name: Handle
   m_TagString: Untagged
@@ -942,6 +944,44 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 134193357}
   m_CullTransparentMesh: 1
+--- !u!223 &134193361
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134193357}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 3
+  m_TargetDisplay: 0
+--- !u!114 &134193362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134193357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &134193363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5097,7 +5137,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be8d6fd237aef0149a40bd9381341f87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainRaycast: {fileID: 79948371}
+  graphicRaycasts:
+  - {fileID: 79948371}
+  - {fileID: 889617958}
+  - {fileID: 134193362}
   billAmountText: {fileID: 1262519}
   tipPercentageHeader: {fileID: 444043917}
   tipPercentageText: {fileID: 1021975906}
@@ -7479,7 +7522,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!1 &829608948
 GameObject:
@@ -7836,6 +7879,8 @@ GameObject:
   - component: {fileID: 889617959}
   - component: {fileID: 889617955}
   - component: {fileID: 889617960}
+  - component: {fileID: 889617957}
+  - component: {fileID: 889617958}
   m_Layer: 5
   m_Name: Handle
   m_TagString: Untagged
@@ -7902,6 +7947,44 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 889617953}
   m_CullTransparentMesh: 1
+--- !u!223 &889617957
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889617953}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 3
+  m_TargetDisplay: 0
+--- !u!114 &889617958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889617953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!95 &889617959
 Animator:
   serializedVersion: 5
@@ -8145,7 +8228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 947116344}
   settingsRaycast: {fileID: 947116342}
-  deletePreferences: 0
+  deletePreferences: 1
   colorThemePref: {fileID: 11400000, guid: 0d1f00ed79eb88045a24bf7f4b949363, type: 2}
   colorThemeSlots:
   - {fileID: 226412964}
@@ -9157,7 +9240,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &1074360246
 MonoBehaviour:
@@ -10250,7 +10333,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &1152515178
 MonoBehaviour:
@@ -11343,7 +11426,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &1409710758
 MonoBehaviour:

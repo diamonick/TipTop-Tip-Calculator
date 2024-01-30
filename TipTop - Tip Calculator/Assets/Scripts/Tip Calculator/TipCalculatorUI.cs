@@ -16,7 +16,7 @@ public class TipCalculatorUI : MonoBehaviour
     private const int VALUE_TEXT_SIZE = 120;
 
     [Header("UI")]
-    [SerializeField] private GraphicRaycaster mainRaycast;
+    [SerializeField] private GraphicRaycaster[] graphicRaycasts;
 
     [Header("UI Text"), Space(8)]
     [SerializeField] private TMP_Text billAmountText;
@@ -171,19 +171,25 @@ public class TipCalculatorUI : MonoBehaviour
 
     #region Raycast Method(s)
     /// <summary>
-    /// Enable Graphic Raycaster component.
+    /// Enable Graphic Raycaster components.
     /// </summary>
-    public void EnableRaycast()
+    public void EnableRaycasts()
     {
-        mainRaycast.enabled = true;
+        foreach (GraphicRaycaster raycast in graphicRaycasts)
+        {
+            raycast.enabled = true;
+        }
     }
 
     /// <summary>
-    /// Disable Graphic Raycaster component.
+    /// Disable Graphic Raycaster components.
     /// </summary>
-    public void DisableRaycast()
+    public void DisableRaycasts()
     {
-        mainRaycast.enabled = false;
+        foreach (GraphicRaycaster raycast in graphicRaycasts)
+        {
+            raycast.enabled = false;
+        }
     }
     #endregion
 }

@@ -216,8 +216,8 @@ public class SettingsMenu : MonoBehaviour
     /// </summary>
     public void ShowSettingsMenu()
     {
-        // Disable main menu's graphic raycaster.
-        TC.UI.DisableRaycast();
+        // Disable main menu's graphic raycasts.
+        TC.UI.DisableRaycasts();
 
         animator.SetBool("Show Menu?", true);
         UpdateUI();
@@ -268,11 +268,11 @@ public class SettingsMenu : MonoBehaviour
     }
 
     /// <summary>
-    /// Enable Main Menu's Graphic Raycaster component.
+    /// Enable Main Menu's Graphic Raycaster components.
     /// </summary>
-    public void EnableMainRaycast()
+    public void EnableMainMenuRaycasts()
     {
-        TC.UI.EnableRaycast();
+        TC.UI.EnableRaycasts();
     }
     #endregion
     #endregion

@@ -15,7 +15,7 @@ public class Screenshotter : MonoBehaviour
 
             if (touch.phase == TouchPhase.Began)
             {
-                ScreenCapture.CaptureScreenshot(Application.dataPath + $"/Screenshots/TipTop_IPhone_Photo{count++}.png");
+                ScreenCapture.CaptureScreenshot(Application.dataPath + $"/Screenshots/TipTop_Iphone_5.5_Photo{count++}.png");
             }
         }
     }
